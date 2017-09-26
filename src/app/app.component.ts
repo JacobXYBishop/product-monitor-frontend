@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {AccountService} from './account-info.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  providers: [AccountService]
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Product Monitor';
 }
