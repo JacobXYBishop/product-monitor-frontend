@@ -1,0 +1,12 @@
+.position-container {
+  display: flex;
+  flex-direction: column;
+  /*max-height: 600px;*/
+  min-width: 300px;
+  margin-top: 25px;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 600px;
+}

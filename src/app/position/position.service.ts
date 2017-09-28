@@ -1,22 +1,21 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
-import {AccountSchemaModel} from './account-schema.model';
+import {PositionModel} from './position.model';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class AccountService {
+export class PositionService {
 
   constructor(private http: Http) {
-
   }
 
-  public getAccountInfo(): Observable<AccountSchemaModel[]> {
-    const url = 'http://192.168.51.210:5000/api/v1/account/' + this.curDate();
+  public getPositionInfo(): Observable<PositionModel[]> {
+    const url = 'http://192.168.51.198:5000/api/v1/position/stock/bgtj/' + this.curDate();
     return this.http.get(url).map(
       res => {
-        const users = res.json();
-        return users.map(acct => new AccountSchemaModel(acct));
+        const r = res.json();
+        return r.map(pos => new PositionModel(pos));
       });
   }
 

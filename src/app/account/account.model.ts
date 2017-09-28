@@ -1,10 +1,11 @@
-export class AccountSchemaModel {
+export class AccountModel {
   product_name: string;
   stock_mv: number;
   future_mv: number;
   future_mg: number;
   stock_total_asset: number;
   future_total_asset: number;
+  account_total_asset: number;
   exposure: number;
   exposure_pct: number;
 

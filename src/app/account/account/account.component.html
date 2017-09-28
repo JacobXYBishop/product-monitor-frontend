@@ -1,0 +1,60 @@
+<button
+  class="refresh-button"
+  md-raised-button color="primary"
+  (click)="refreshAllAccounts(); openSnackBar()"
+>
+  刷新
+</button>
+<div class="account-container mat-elevation-z8">
+
+  <md-table #table [dataSource]="dataSource">
+
+    <ng-container mdColumnDef="product_name">
+      <md-header-cell *mdHeaderCellDef> 产品名称 </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.product_name}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="stock_mv">
+      <md-header-cell *mdHeaderCellDef> 股票市值 </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.stock_mv}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="future_mv">
+      <md-header-cell *mdHeaderCellDef> 期货净市值 </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.future_mv}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="future_mg">
+      <md-header-cell *mdHeaderCellDef> 占用保证金 </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.future_mg}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="stock_total_asset">
+      <md-header-cell *mdHeaderCellDef> 股票总资产 </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.stock_total_asset}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="future_total_asset">
+      <md-header-cell *mdHeaderCellDef> 期货总资产 </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.future_total_asset}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="account_total_asset">
+      <md-header-cell *mdHeaderCellDef> 产品总资产 </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.account_total_asset}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="exposure">
+      <md-header-cell *mdHeaderCellDef> 敞口 </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.exposure}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="exposure_pct">
+      <md-header-cell *mdHeaderCellDef> 敞口占比 </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.exposure_pct}} </md-cell>
+    </ng-container>
+
+    <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+    <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+  </md-table>
+</div>

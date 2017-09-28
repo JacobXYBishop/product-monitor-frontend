@@ -1,0 +1,32 @@
+<div class="position-container mat-elevation-z8">
+  <md-table #table [dataSource]="dataSource">
+
+    <ng-container mdColumnDef="product_id">
+      <md-header-cell *mdHeaderCellDef> ID </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.product_id}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="ticker">
+      <md-header-cell *mdHeaderCellDef> Ticker </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.ticker}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="volume">
+      <md-header-cell *mdHeaderCellDef> Volume </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.volume}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="direction">
+      <md-header-cell *mdHeaderCellDef> Direction </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.direction}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="date">
+      <md-header-cell *mdHeaderCellDef> Date </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.date}} </md-cell>
+    </ng-container>
+
+    <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+    <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+  </md-table>
+</div>

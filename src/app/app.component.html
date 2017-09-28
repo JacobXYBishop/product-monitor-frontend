@@ -1,7 +1,12 @@
-<div class="container">
-  <div class="header">
-    <h2>{{title}}</h2>
-  </div>
-  <app-product></app-product>
-</div>
+<h1 class="title">Product Monitor</h1>
+<nav md-tab-nav-bar>
+  <a md-tab-link
+     *ngFor="let routeLink of routeLinks; let i = index"
+     [routerLink]="routeLink.link"
+     [active]="activeLinkIndex === i"
+     (click)="activeLinkIndex = i">
+    {{routeLink.label}}
+  </a>
+</nav>
+<router-outlet></router-outlet>
 
