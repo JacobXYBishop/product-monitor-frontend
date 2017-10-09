@@ -10,8 +10,8 @@ export class PositionService {
   constructor(private http: Http) {
   }
 
-  public getPositionInfo(): Observable<PositionModel[]> {
-    const url = 'http://192.168.51.198:5000/api/v1/position/stock/bgtj/' + this.curDate();
+  public getPositionInfo(product_selection: string, type_selection: string): Observable<PositionModel[]> {
+    const url = `http://192.168.51.198:5000/api/v1/position/${type_selection}/${product_selection}/${this.curDate()}`;
     return this.http.get(url).map(
       res => {
         const r = res.json();

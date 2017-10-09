@@ -1,13 +1,15 @@
 export class AccountModel {
   product_name: string;
-  stock_mv: number;
-  future_mv: number;
-  future_mg: number;
-  stock_total_asset: number;
-  future_total_asset: number;
-  account_total_asset: number;
-  exposure: number;
-  exposure_pct: number;
+  stock_mv: string;
+  future_mv: string;
+  future_mg: string;
+  stock_total_asset: string;
+  future_total_asset: string;
+  account_total_asset: string;
+  account_position_pct: string;
+  future_risk_pct: string;
+  exposure: string;
+  exposure_pct: string;
 
   constructor(values: Object = {}) {
     Object.assign(this, values);

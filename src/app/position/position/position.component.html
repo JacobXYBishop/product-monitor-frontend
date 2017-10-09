@@ -1,29 +1,47 @@
+<md-select class="product-selection" placeholder="选择产品" [(ngModel)]="selectedValue">
+  <md-option *ngFor="let p of products" [value]="p.product_id">
+    {{p.viewValue}}
+  </md-option>
+</md-select>
+
+<md-radio-group [(ngModel)]="position_type">
+  <md-radio-button value="stock">股票</md-radio-button>
+  <md-radio-button value="future">期货</md-radio-button>
+</md-radio-group>
+
+<button
+  md-raised-button color="primary"
+  (click)="refreshPosition(selectedValue, position_type)"
+>
+  提交
+</button>
+
 <div class="position-container mat-elevation-z8">
   <md-table #table [dataSource]="dataSource">
 
     <ng-container mdColumnDef="product_id">
-      <md-header-cell *mdHeaderCellDef> ID </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.product_id}} </md-cell>
+      <md-header-cell *mdHeaderCellDef> ID</md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.product_id}}</md-cell>
     </ng-container>
 
     <ng-container mdColumnDef="ticker">
-      <md-header-cell *mdHeaderCellDef> Ticker </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.ticker}} </md-cell>
+      <md-header-cell *mdHeaderCellDef> Ticker</md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.ticker}}</md-cell>
     </ng-container>
 
     <ng-container mdColumnDef="volume">
-      <md-header-cell *mdHeaderCellDef> Volume </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.volume}} </md-cell>
+      <md-header-cell *mdHeaderCellDef> Volume</md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.volume}}</md-cell>
     </ng-container>
 
     <ng-container mdColumnDef="direction">
-      <md-header-cell *mdHeaderCellDef> Direction </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.direction}} </md-cell>
+      <md-header-cell *mdHeaderCellDef> Direction</md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.direction}}</md-cell>
     </ng-container>
 
     <ng-container mdColumnDef="date">
-      <md-header-cell *mdHeaderCellDef> Date </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.date}} </md-cell>
+      <md-header-cell *mdHeaderCellDef> Date</md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.date}}</md-cell>
     </ng-container>
 
     <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>

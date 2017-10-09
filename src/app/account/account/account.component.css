@@ -10,7 +10,16 @@
   /*margin-top: 25px;*/
 }
 
-.mat-table {
+mat-table {
   overflow: auto;
   max-height: 500px;
+}
+
+md-header-cell {
+  text-align: end;
+  font-weight: 900;
+}
+
+md-cell {
+  text-align: end;
 }

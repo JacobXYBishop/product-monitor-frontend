@@ -22,6 +22,8 @@ export class AccountComponent {
     'stock_total_asset',
     'future_total_asset',
     'account_total_asset',
+    'account_position_pct',
+    'future_risk_pct',
     'exposure',
     'exposure_pct'
   ];
@@ -30,6 +32,7 @@ export class AccountComponent {
   constructor(private service: AccountService,
               private snackBar: MdSnackBar) {
     this.refreshAllAccounts();
+    this.openSnackBar();
   }
 
 
@@ -40,7 +43,15 @@ export class AccountComponent {
   }
 
   public openSnackBar() {
-    this.snackBar.open('刷新中...', '', {duration: 3000});
+    this.snackBar.open('更新中...', '', {duration: 2000});
+  }
+
+  public switchColor(num, threshold) {
+    if (num >= threshold) {
+      return 'red';
+    } else {
+      return 'black';
+    }
   }
 
 }

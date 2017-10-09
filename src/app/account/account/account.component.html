@@ -44,6 +44,16 @@
       <md-cell *mdCellDef="let element"> {{element.account_total_asset}} </md-cell>
     </ng-container>
 
+    <ng-container mdColumnDef="account_position_pct">
+      <md-header-cell *mdHeaderCellDef> 股票仓位 </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.account_position_pct}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="future_risk_pct">
+      <md-header-cell *mdHeaderCellDef> 期货风险度 </md-header-cell>
+      <md-cell *mdCellDef="let element" [style.color]="switchColor(element.future_risk_pct, 90)"> {{element.future_risk_pct}} </md-cell>
+    </ng-container>
+
     <ng-container mdColumnDef="exposure">
       <md-header-cell *mdHeaderCellDef> 敞口 </md-header-cell>
       <md-cell *mdCellDef="let element"> {{element.exposure}} </md-cell>
@@ -51,7 +61,7 @@
 
     <ng-container mdColumnDef="exposure_pct">
       <md-header-cell *mdHeaderCellDef> 敞口占比 </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.exposure_pct}} </md-cell>
+      <md-cell *mdCellDef="let element" [style.color]="switchColor(element.exposure_pct, 10)"> {{element.exposure_pct}} </md-cell>
     </ng-container>
 
     <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>

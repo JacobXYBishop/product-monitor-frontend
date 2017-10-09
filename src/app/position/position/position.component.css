@@ -1,9 +1,13 @@
+.product-selection {
+  margin-top: 25px;
+}
+
 .position-container {
   display: flex;
   flex-direction: column;
   /*max-height: 600px;*/
   min-width: 300px;
-  margin-top: 25px;
+  margin-top: 15px;
 }
 
 .mat-table {
