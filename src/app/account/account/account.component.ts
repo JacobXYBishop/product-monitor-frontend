@@ -35,6 +35,7 @@ export class AccountComponent implements OnInit {
   ];
   dataChange: BehaviorSubject<AccountModel[]> = new BehaviorSubject<AccountModel[]>([]);
   dataSource: AccountDataSource | null;
+  lastUpdate;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -42,8 +43,7 @@ export class AccountComponent implements OnInit {
 
   constructor(private service: AccountService,
               private cdRef: ChangeDetectorRef,
-              private snackBar: MatSnackBar) {
-  }
+              private snackBar: MatSnackBar) {}
 
   get data(): AccountModel[] { return this.dataChange.value; }
 
@@ -54,6 +54,7 @@ export class AccountComponent implements OnInit {
       this.cdRef.detectChanges();
       this.initSource();
       this.openSnackBar();
+      this.updateTime();
     });
   }
 
@@ -85,6 +86,10 @@ export class AccountComponent implements OnInit {
         this.dataSource.filter = this.filter.nativeElement.value;
       });
     this.cdRef.detectChanges();
+  }
+
+  updateTime() {
+    this.lastUpdate = new Date();
   }
 
 }

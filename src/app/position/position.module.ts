@@ -4,6 +4,8 @@ import {PositionComponent} from './position/position.component';
 import {PositionService} from './position.service';
 import {PositionRoutingModule} from './position-routing.module';
 
+import {MomentModule} from 'angular2-moment';
+
 import {FormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -26,6 +28,7 @@ import {
     HttpModule,
     BrowserModule,
     BrowserAnimationsModule,
+    MomentModule,
     FormsModule,
     PositionRoutingModule,
     MatSelectModule,

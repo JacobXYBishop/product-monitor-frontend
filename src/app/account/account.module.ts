@@ -4,6 +4,8 @@ import {AccountComponent} from './account/account.component';
 import {AccountService} from './account.service';
 import {AccountRoutingModule} from './account-routing.module';
 
+import {MomentModule} from 'angular2-moment';
+
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CdkTableModule} from '@angular/cdk/table';
@@ -22,6 +24,7 @@ import {
     HttpModule,
     BrowserModule,
     BrowserAnimationsModule,
+    MomentModule,
     AccountRoutingModule,
     MatButtonModule,
     MatSnackBarModule,

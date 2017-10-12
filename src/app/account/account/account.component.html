@@ -3,8 +3,10 @@
   mat-raised-button color="primary"
   (click)="refreshAllAccounts()"
 >
-  刷新
+  更新时间：
+  <time>{{lastUpdate | amLocal | amDateFormat: 'HH:mm:ss'}}</time>
 </button>
+
 
 <div *ngIf="isDataAvailable">
   <div class="account-container mat-elevation-z8">

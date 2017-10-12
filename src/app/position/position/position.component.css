@@ -1,6 +1,13 @@
-mat-grid-list {
-  margin-top: 15px;
-  width: 30%;
+.product-selection {
+  display: inline-block;
+}
+
+.type-selection {
+  display: inline-block;
+}
+
+.submit-buttom {
+  display: inline-block;
 }
 
 .position-container {

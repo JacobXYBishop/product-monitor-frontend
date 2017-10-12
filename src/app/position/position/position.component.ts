@@ -41,6 +41,7 @@ export class PositionComponent {
   ];
   dataChange: BehaviorSubject<PositionModel[]> = new BehaviorSubject<PositionModel[]>([]);
   dataSource: PositionDataSource | null;
+  lastUpdate;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -61,6 +62,7 @@ export class PositionComponent {
       this.isDataAvailable = true;
       this.cdRef.detectChanges();
       this.initSource();
+      this.updateTime();
     });
   }
 
@@ -76,6 +78,11 @@ export class PositionComponent {
         this.dataSource.filter = this.filter.nativeElement.value;
       });
     this.cdRef.detectChanges();
+  }
+
+  updateTime() {
+    this.lastUpdate = new Date();
+    console.log(this.lastUpdate);
   }
 
 }

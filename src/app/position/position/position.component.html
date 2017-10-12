@@ -1,31 +1,26 @@
-<mat-grid-list cols="4" rowHeight="50px">
+<div>
+  <mat-form-field class="product-selection">
+    <mat-select [(ngModel)]="selectedValue" placeholder="选择产品">
+      <mat-option *ngFor="let p of products" [value]="p.product_id">
+        {{p.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-  <mat-grid-tile>
-    <mat-form-field>
-      <mat-select class="product-selection" [(ngModel)]="selectedValue" placeholder="选择产品">
-        <mat-option *ngFor="let p of products" [value]="p.product_id">
-          {{p.viewValue}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </mat-grid-tile>
+  <mat-radio-group class="type-selection" [(ngModel)]="position_type">
+    <mat-radio-button value="stock">股票</mat-radio-button>
+    <mat-radio-button value="future">期货</mat-radio-button>
+  </mat-radio-group>
 
-  <mat-grid-tile>
-    <mat-radio-group [(ngModel)]="position_type">
-      <mat-radio-button value="stock">股票</mat-radio-button>
-      <mat-radio-button value="future">期货</mat-radio-button>
-    </mat-radio-group>
-  </mat-grid-tile>
-
-  <mat-grid-tile>
-    <button
-      mat-raised-button color="primary"
-      (click)="refreshPosition(selectedValue, position_type)"
-    >
-      提交
-    </button>
-  </mat-grid-tile>
-</mat-grid-list>
+  <button
+    class="submit-buttom"
+    mat-raised-button color="primary"
+    (click)="refreshPosition(selectedValue, position_type)"
+  >
+    更新时间：
+    <time>{{lastUpdate | amLocal | amDateFormat: 'HH:mm:ss'}}</time>
+  </button>
+</div>
 
 <div *ngIf="isDataAvailable">
   <div class="position-container mat-elevation-z8">
