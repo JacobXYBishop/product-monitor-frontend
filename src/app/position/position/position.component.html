@@ -1,14 +1,13 @@
 <mat-grid-list cols="4" rowHeight="50px">
-  <mat-grid-tile>
-    选择产品：
-  </mat-grid-tile>
 
   <mat-grid-tile>
-    <mat-select class="product-selection" [(ngModel)]="selectedValue">
-      <mat-option *ngFor="let p of products" [value]="p.product_id">
-        {{p.viewValue}}
-      </mat-option>
-    </mat-select>
+    <mat-form-field>
+      <mat-select class="product-selection" [(ngModel)]="selectedValue" placeholder="选择产品">
+        <mat-option *ngFor="let p of products" [value]="p.product_id">
+          {{p.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
   </mat-grid-tile>
 
   <mat-grid-tile>
@@ -28,54 +27,52 @@
   </mat-grid-tile>
 </mat-grid-list>
 
+<div *ngIf="isDataAvailable">
+  <div class="position-container mat-elevation-z8">
 
-<!--<mat-select class="product-selection" placeholder="选择产品" [(ngModel)]="selectedValue">-->
-  <!--<mat-option *ngFor="let p of products" [value]="p.product_id">-->
-    <!--{{p.viewValue}}-->
-  <!--</mat-option>-->
-<!--</mat-select>-->
+    <div class="example-header">
+      <mat-input-container floatPlaceholder="never">
+        <input matInput #filter placeholder="查询标的">
+      </mat-input-container>
+    </div>
 
-<!--<mat-radio-group [(ngModel)]="position_type">-->
-  <!--<mat-radio-button value="stock">股票</mat-radio-button>-->
-  <!--<mat-radio-button value="future">期货</mat-radio-button>-->
-<!--</mat-radio-group>-->
+    <mat-table #table [dataSource]="dataSource" matSort>
 
-<!--<button-->
-  <!--mat-raised-button color="primary"-->
-  <!--(click)="refreshPosition(selectedValue, position_type)"-->
-<!--&gt;-->
-  <!--提交-->
-<!--</button>-->
+      <ng-container matColumnDef="product_id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 产品</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.product_id}}</mat-cell>
+      </ng-container>
 
-<div class="position-container mat-elevation-z8">
-  <mat-table #table [dataSource]="dataSource">
+      <ng-container matColumnDef="ticker">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 标的</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.ticker}}</mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="product_id">
-      <mat-header-cell *matHeaderCellDef> ID</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.product_id}}</mat-cell>
-    </ng-container>
+      <ng-container matColumnDef="volume">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 持仓量</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.volume}}</mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="ticker">
-      <mat-header-cell *matHeaderCellDef> Ticker</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.ticker}}</mat-cell>
-    </ng-container>
+      <ng-container matColumnDef="direction">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 方向</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.direction}}</mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="volume">
-      <mat-header-cell *matHeaderCellDef> Volume</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.volume}}</mat-cell>
-    </ng-container>
+      <ng-container matColumnDef="date">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 日期</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.date}}</mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="direction">
-      <mat-header-cell *matHeaderCellDef> Direction</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.direction}}</mat-cell>
-    </ng-container>
+      <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *cdkRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
 
-    <ng-container matColumnDef="date">
-      <mat-header-cell *matHeaderCellDef> Date</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.date}}</mat-cell>
-    </ng-container>
+    <div class="example-no-results" [style.display]="dataSource?.renderedData.length == 0 ? '' : 'none'">
+      No changes found matching filter.
+    </div>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </mat-table>
+    <mat-paginator #paginator [length]="dataSource?.filteredData.length" [pageIndex]="0" [pageSize]="500"
+                   [pageSizeOptions]="[50, 100, 200, 500, 1000]">
+    </mat-paginator>
+  </div>
 </div>

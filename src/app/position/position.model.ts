@@ -1,7 +1,7 @@
 export class PositionModel {
   product_id: string;
   ticker: string;
-  volume: number;
+  volume: string;
   direction: string;
   date: string;
 
