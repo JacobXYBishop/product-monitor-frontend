@@ -1,18 +1,27 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
 import {AccountComponent} from './account/account.component';
 import {AccountService} from './account.service';
 import {AccountRoutingModule} from './account-routing.module';
 
-import {MatButtonModule, MatSnackBarModule, MatTableModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {BrowserModule} from '@angular/platform-browser';
+import {CdkTableModule} from '@angular/cdk/table';
+import {HttpModule} from '@angular/http';
+import {MatInputModule, MatPaginatorModule, MatButtonModule, MatSnackBarModule, MatTableModule, MatSortModule} from '@angular/material';
 
 @NgModule({
   imports: [
-    CommonModule,
+    HttpModule,
+    BrowserModule,
+    BrowserAnimationsModule,
     AccountRoutingModule,
-    MatTableModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTableModule,
+    MatSortModule,
+    MatInputModule,
+    CdkTableModule,
+    MatPaginatorModule
   ],
   declarations: [
     AccountComponent

@@ -27,12 +27,11 @@ export class PositionComponent {
   displayedColumns = ['product_id', 'ticker', 'volume', 'direction', 'date'];
   dataSource: PositionDataSource;
 
+  selectedValue;
   products = Products;
   position_type: string;
 
-  constructor(private service: PositionService) {
-    // this.refreshPosition();
-  }
+  constructor(private service: PositionService) {}
 
   public refreshPosition(product_selection: string, type_selection: string): void {
     console.log(product_selection);

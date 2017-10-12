@@ -1,5 +1,6 @@
-.product-selection {
-  margin-top: 25px;
+mat-grid-list {
+  margin-top: 15px;
+  width: 30%;
 }
 
 .position-container {
@@ -10,7 +11,7 @@
   margin-top: 15px;
 }
 
-.mat-table {
+mat-table {
   overflow: auto;
   max-height: 600px;
 }

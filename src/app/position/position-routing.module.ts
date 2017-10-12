@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {PositionComponent} from './position/position.component';
 
@@ -14,4 +14,5 @@ const positionRoutes: Routes = [
     RouterModule
   ]
 })
-export class PositionRoutingModule { }
+export class PositionRoutingModule {
+}

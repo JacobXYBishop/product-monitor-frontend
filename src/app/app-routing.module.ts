@@ -16,6 +16,11 @@ const appRoutes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'build',
+    redirectTo: '/build',
+    pathMatch: 'full'
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   }

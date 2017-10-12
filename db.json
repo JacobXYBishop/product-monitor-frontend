@@ -1,0 +1,25 @@
+{
+  "build": [
+    {
+      "ChangeId": 1,
+      "ChangeTitle": "Change 1",
+      "DateSubmitted": "any",
+      "ChangeSponsor": "Sponsor 1",
+      "ChangeDescription": "Description 1"
+    },
+    {
+      "ChangeId": 2,
+      "ChangeTitle": "Change 2",
+      "DateSubmitted": "any",
+      "ChangeSponsor": "Sponsor 2",
+      "ChangeDescription": "Description 2"
+    },
+    {
+      "ChangeId": 3,
+      "ChangeTitle": "Change 3",
+      "DateSubmitted": "any",
+      "ChangeSponsor": "Sponsor 3",
+      "ChangeDescription": "Description 3"
+    }
+  ]
+}

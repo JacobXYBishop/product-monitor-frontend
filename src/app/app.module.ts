@@ -1,16 +1,19 @@
-import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
-import {AppComponent} from './app.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpModule} from '@angular/http';
 
-import {MdTabsModule} from '@angular/material';
+import {AppComponent} from './app.component';
+
+import {MatDatepickerModule, MatInputModule, MatNativeDateModule, MatTabsModule} from '@angular/material';
 
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+
 import {AccountModule} from './account/account.module';
 import {PositionModule} from './position/position.module';
+import {BuildModule} from './build/build.module';
+
 import {AppRoutingModule} from './app-routing.module';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,14 +22,22 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpModule,
-    MdTabsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTabsModule,
+    MatInputModule,
+
     AccountModule,
     PositionModule,
-    AppRoutingModule,
-    BrowserAnimationsModule
+    BuildModule,
+
+    AppRoutingModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule {
 }

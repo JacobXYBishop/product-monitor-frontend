@@ -1,70 +1,91 @@
 <button
   class="refresh-button"
-  md-raised-button color="primary"
-  (click)="refreshAllAccounts(); openSnackBar()"
+  mat-raised-button color="primary"
+  (click)="refreshAllAccounts()"
 >
   刷新
 </button>
-<div class="account-container mat-elevation-z8">
 
-  <md-table #table [dataSource]="dataSource">
+<div *ngIf="isDataAvailable">
+  <div class="account-container mat-elevation-z8">
 
-    <ng-container mdColumnDef="product_name">
-      <md-header-cell *mdHeaderCellDef> 产品名称 </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.product_name}} </md-cell>
-    </ng-container>
+    <div class="example-header">
+      <mat-input-container floatPlaceholder="never">
+        <input matInput #filter placeholder="Filter">
+      </mat-input-container>
+    </div>
 
-    <ng-container mdColumnDef="stock_mv">
-      <md-header-cell *mdHeaderCellDef> 股票市值 </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.stock_mv}} </md-cell>
-    </ng-container>
+    <mat-table #table [dataSource]="dataSource" matSort>
 
-    <ng-container mdColumnDef="future_mv">
-      <md-header-cell *mdHeaderCellDef> 期货净市值 </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.future_mv}} </md-cell>
-    </ng-container>
+      <ng-container matColumnDef="product_name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 产品名称</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.product_name}}</mat-cell>
+      </ng-container>
 
-    <ng-container mdColumnDef="future_mg">
-      <md-header-cell *mdHeaderCellDef> 占用保证金 </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.future_mg}} </md-cell>
-    </ng-container>
+      <ng-container matColumnDef="stock_mv">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 股票市值</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.stock_mv}}</mat-cell>
+      </ng-container>
 
-    <ng-container mdColumnDef="stock_total_asset">
-      <md-header-cell *mdHeaderCellDef> 股票总资产 </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.stock_total_asset}} </md-cell>
-    </ng-container>
+      <ng-container matColumnDef="future_mv">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 期货净市值</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.future_mv}}</mat-cell>
+      </ng-container>
 
-    <ng-container mdColumnDef="future_total_asset">
-      <md-header-cell *mdHeaderCellDef> 期货总资产 </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.future_total_asset}} </md-cell>
-    </ng-container>
+      <ng-container matColumnDef="future_mg">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 占用保证金</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.future_mg}}</mat-cell>
+      </ng-container>
 
-    <ng-container mdColumnDef="account_total_asset">
-      <md-header-cell *mdHeaderCellDef> 产品总资产 </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.account_total_asset}} </md-cell>
-    </ng-container>
+      <ng-container matColumnDef="stock_total_asset">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 股票总资产</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.stock_total_asset}}</mat-cell>
+      </ng-container>
 
-    <ng-container mdColumnDef="account_position_pct">
-      <md-header-cell *mdHeaderCellDef> 股票仓位 </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.account_position_pct}} </md-cell>
-    </ng-container>
+      <ng-container matColumnDef="future_total_asset">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 期货总资产</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.future_total_asset}}</mat-cell>
+      </ng-container>
 
-    <ng-container mdColumnDef="future_risk_pct">
-      <md-header-cell *mdHeaderCellDef> 期货风险度 </md-header-cell>
-      <md-cell *mdCellDef="let element" [style.color]="switchColor(element.future_risk_pct, 90)"> {{element.future_risk_pct}} </md-cell>
-    </ng-container>
+      <ng-container matColumnDef="account_total_asset">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 产品总资产</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.account_total_asset}}</mat-cell>
+      </ng-container>
 
-    <ng-container mdColumnDef="exposure">
-      <md-header-cell *mdHeaderCellDef> 敞口 </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.exposure}} </md-cell>
-    </ng-container>
+      <ng-container matColumnDef="account_position_pct">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 股票仓位</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.account_position_pct}}</mat-cell>
+      </ng-container>
 
-    <ng-container mdColumnDef="exposure_pct">
-      <md-header-cell *mdHeaderCellDef> 敞口占比 </md-header-cell>
-      <md-cell *mdCellDef="let element" [style.color]="switchColor(element.exposure_pct, 10)"> {{element.exposure_pct}} </md-cell>
-    </ng-container>
+      <ng-container matColumnDef="future_risk_pct">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 期货风险度</mat-header-cell>
+        <mat-cell *matCellDef="let element" [style.color]="switchColor(element.future_risk_pct, 90)">
+          {{element.future_risk_pct}}
+        </mat-cell>
+      </ng-container>
 
-    <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
-    <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
-  </md-table>
+      <ng-container matColumnDef="exposure">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 敞口</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.exposure}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="exposure_pct">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 敞口占比</mat-header-cell>
+        <mat-cell *matCellDef="let element" [style.color]="switchColor(element.exposure_pct, 10)">
+          {{element.exposure_pct}}
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *cdkRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <div class="example-no-results" [style.display]="dataSource?.renderedData.length == 0 ? '' : 'none'">
+      No changes found matching filter.
+    </div>
+
+    <mat-paginator #paginator [length]="dataSource?.filteredData.length" [pageIndex]="0" [pageSize]="25"
+                   [pageSizeOptions]="[5, 10, 25, 100]">
+    </mat-paginator>
+  </div>
 </div>
