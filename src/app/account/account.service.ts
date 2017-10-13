@@ -11,7 +11,7 @@ export class AccountService {
   }
 
   public getAccountInfo(): Observable<AccountModel[]> {
-    const url = 'http://192.168.51.198:5000/api/v1/account/' + this.curDate();
+    const url = 'http://192.168.51.154:5000/api/v1/account/' + this.curDate();
     return this.http.get(url).map(
       res => {
         const r = res.json();

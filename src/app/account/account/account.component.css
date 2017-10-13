@@ -16,6 +16,10 @@ mat-table {
   max-height: 500px;
 }
 
+mat-cell {
+  text-align: right;
+}
+
 md-header-cell {
   text-align: end;
   font-weight: 900;
