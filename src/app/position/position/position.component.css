@@ -22,3 +22,18 @@ mat-table {
   overflow: auto;
   max-height: 600px;
 }
+
+mat-row {
+  min-height: 40px;
+  align-items: center;
+}
+
+mat-cell {
+  color: dimgray;
+  font-size: small;
+}
+
+mat-header-cell {
+  color: dimgray;
+  font-size: medium;
+}

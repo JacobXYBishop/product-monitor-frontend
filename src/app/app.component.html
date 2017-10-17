@@ -1,6 +1,6 @@
 <div>
   <h1 class="title">Product Monitor</h1>
-  <time>{{clock | amLocale:'en' | amDateFormat:'YYYY-MM-DD HH:mm:ss'}}</time>
+  <p class="clock">{{clock | async | date: 'y-M-d EEEE HH:mm:ss'}}</p>
 </div>
 
 <!--&lt;!&ndash;<mat-form-field class="example-full-width">&ndash;&gt;-->

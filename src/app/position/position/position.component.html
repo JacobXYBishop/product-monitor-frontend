@@ -15,10 +15,10 @@
   <button
     class="submit-buttom"
     mat-raised-button color="primary"
-    (click)="refreshPosition(selectedValue, position_type)"
+    (click)="click$.next(); refreshPosition(selectedValue, position_type)"
   >
     更新时间：
-    <time>{{lastUpdate | amLocal | amDateFormat: 'HH:mm:ss'}}</time>
+    <time>{{clock | async | date: 'HH:mm:ss'}}</time>
   </button>
 </div>
 

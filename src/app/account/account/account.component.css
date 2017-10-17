@@ -16,15 +16,17 @@ mat-table {
   max-height: 500px;
 }
 
+mat-row {
+  min-height: 40px;
+  align-items: center;
+}
+
 mat-cell {
-  text-align: right;
+  color: dimgray;
+  font-size: smaller;
 }
 
-md-header-cell {
-  text-align: end;
-  font-weight: 900;
-}
-
-md-cell {
-  text-align: end;
+mat-header-cell {
+  color: dimgray;
+  font-size: small;
 }

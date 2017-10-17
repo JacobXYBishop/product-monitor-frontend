@@ -12,6 +12,7 @@ import 'rxjs/add/operator/debounceTime';
 
 import {PositionService} from '../position.service';
 import {PositionModel} from '../position.model';
+import {Subject} from "rxjs/Subject";
 
 
 const Products = [
@@ -41,6 +42,9 @@ export class PositionComponent {
   ];
   dataChange: BehaviorSubject<PositionModel[]> = new BehaviorSubject<PositionModel[]>([]);
   dataSource: PositionDataSource | null;
+  click$ = new Subject();
+  clock;
+
   lastUpdate;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -52,7 +56,9 @@ export class PositionComponent {
   position_type: string;
 
   constructor(private service: PositionService,
-              private cdRef: ChangeDetectorRef) {}
+              private cdRef: ChangeDetectorRef) {
+    this.clock = this.click$.map(() => new Date());
+  }
 
   get data(): PositionModel[] { return this.dataChange.value; }
 

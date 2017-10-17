@@ -2,12 +2,12 @@
  * Created by jacob on 8/23/2017.
  */
 
-h1 {
+.title {
   color: #3f51b5;
   display: inline-block;
 }
 
-time {
+.clock {
   color: #3f51b5;
   display: inline-block;
   padding-left: 20px;

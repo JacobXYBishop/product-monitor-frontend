@@ -3,6 +3,7 @@ import {DataSource} from '@angular/cdk/collections';
 import {MatPaginator, MatSnackBar, MatSort} from '@angular/material';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {Observable} from 'rxjs/Observable';
+import {Subject} from 'rxjs/Subject';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/observable/merge';
 import 'rxjs/add/observable/fromEvent';
@@ -35,7 +36,8 @@ export class AccountComponent implements OnInit {
   ];
   dataChange: BehaviorSubject<AccountModel[]> = new BehaviorSubject<AccountModel[]>([]);
   dataSource: AccountDataSource | null;
-  lastUpdate;
+  click$ = new Subject();
+  clock;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -43,7 +45,15 @@ export class AccountComponent implements OnInit {
 
   constructor(private service: AccountService,
               private cdRef: ChangeDetectorRef,
-              private snackBar: MatSnackBar) {}
+              private snackBar: MatSnackBar) {
+    this.clock = Observable.merge(
+      this.click$,
+      Observable.interval(60000)
+    ).map(() => {
+      this.refreshAllAccounts();
+      return new Date();
+    });
+  }
 
   get data(): AccountModel[] { return this.dataChange.value; }
 
@@ -54,7 +64,6 @@ export class AccountComponent implements OnInit {
       this.cdRef.detectChanges();
       this.initSource();
       this.openSnackBar();
-      this.updateTime();
     });
   }
 
@@ -70,7 +79,7 @@ export class AccountComponent implements OnInit {
     if (num >= threshold) {
       return 'red';
     } else {
-      return 'black';
+      return 'dimgray';
     }
   }
 
@@ -86,10 +95,6 @@ export class AccountComponent implements OnInit {
         this.dataSource.filter = this.filter.nativeElement.value;
       });
     this.cdRef.detectChanges();
-  }
-
-  updateTime() {
-    this.lastUpdate = new Date();
   }
 
 }

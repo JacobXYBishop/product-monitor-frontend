@@ -1,10 +1,11 @@
 <button
   class="refresh-button"
   mat-raised-button color="primary"
-  (click)="refreshAllAccounts()"
+  (click)="click$.next()"
 >
   更新时间：
-  <time>{{lastUpdate | amLocal | amDateFormat: 'HH:mm:ss'}}</time>
+  <!--<time>{{lastUpdate | amLocal | amDateFormat: 'HH:mm:ss'}}</time>-->
+  <time>{{clock | async | date: 'HH:mm:ss'}}</time>
 </button>
 
 

@@ -1,5 +1,8 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/observable/interval';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +12,7 @@ import {Router} from '@angular/router';
 export class AppComponent {
   routeLinks: any[];
   activeLinkIndex = 0;
-  clock: Date;
+  clock = Observable.interval(1000).map(() => new Date());
 
   // dateFilter = (d: Date): boolean => {
   //   const day = d.getDay();
@@ -27,10 +30,5 @@ export class AppComponent {
     this.activeLinkIndex = this.routeLinks
       .indexOf(this.routeLinks.find(tab => router.url.indexOf(tab.link) !== -1));
 
-    const stationDate = new Date();
-
-    setInterval(() => {
-      this.clock = new Date(stationDate.setSeconds(stationDate.getSeconds() + 1))
-    }, 1000);
   }
 }

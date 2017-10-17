@@ -14,7 +14,6 @@ import {PositionModule} from './position/position.module';
 import {BuildModule} from './build/build.module';
 
 import {AppRoutingModule} from './app-routing.module';
-import {MomentModule} from 'angular2-moment';
 
 @NgModule({
   declarations: [
@@ -29,7 +28,6 @@ import {MomentModule} from 'angular2-moment';
     MatNativeDateModule,
     MatTabsModule,
     MatInputModule,
-    MomentModule,
 
     AccountModule,
     PositionModule,
