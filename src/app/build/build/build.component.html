@@ -1,2 +1,4 @@
-<button (click)="click$.next()">Update</button>
+<button (click)="clickHours$.next()">Update</button>
+<button (click)="clickDate$.next()">Update</button>
+
 <h1>{{clock | async | date: 'y MMMM EEEE HH:mm:ss'}}</h1>

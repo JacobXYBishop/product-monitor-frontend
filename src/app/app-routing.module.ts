@@ -21,6 +21,11 @@ const appRoutes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'charts',
+    redirectTo: '/charts',
+    pathMatch: 'full'
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   }

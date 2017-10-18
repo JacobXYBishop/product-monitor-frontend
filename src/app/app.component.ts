@@ -24,7 +24,8 @@ export class AppComponent {
     this.routeLinks = [
       {label: 'Account', link: '/account'},
       {label: 'Position', link: '/position'},
-      // {label: 'Build', link: '/build'},
+      {label: 'Build', link: '/build'},
+      {label: 'Charts', link: '/charts'},
     ];
 
     this.activeLinkIndex = this.routeLinks

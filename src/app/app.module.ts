@@ -12,6 +12,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {AccountModule} from './account/account.module';
 import {PositionModule} from './position/position.module';
 import {BuildModule} from './build/build.module';
+import {ChartsModule} from './charts/charts.module';
 
 import {AppRoutingModule} from './app-routing.module';
 
@@ -32,6 +33,7 @@ import {AppRoutingModule} from './app-routing.module';
     AccountModule,
     PositionModule,
     BuildModule,
+    ChartsModule,
 
     AppRoutingModule
   ],

@@ -50,7 +50,7 @@ export class AccountComponent implements OnInit {
       this.click$,
       Observable.interval(60000)
     ).map(() => {
-      this.refreshAllAccounts();
+      // this.refreshAllAccounts();
       return new Date();
     });
   }
@@ -68,7 +68,7 @@ export class AccountComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.refreshAllAccounts();
+    // this.refreshAllAccounts();
   }
 
   public openSnackBar() {
