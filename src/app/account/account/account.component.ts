@@ -14,6 +14,7 @@ import 'rxjs/add/operator/debounceTime';
 import {AccountService} from '../account.service';
 import {AccountModel} from '../account.model';
 
+import {invokeSleep} from '../../utils';
 
 @Component({
   templateUrl: './account.component.html',
@@ -50,7 +51,7 @@ export class AccountComponent implements OnInit {
       this.click$,
       Observable.interval(60000)
     ).map(() => {
-      // this.refreshAllAccounts();
+      invokeSleep(this.refreshAllAccounts);
       return new Date();
     });
   }
@@ -68,7 +69,7 @@ export class AccountComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.refreshAllAccounts();
+    this.refreshAllAccounts();
   }
 
   public openSnackBar() {

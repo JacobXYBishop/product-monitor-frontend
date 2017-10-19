@@ -10,20 +10,33 @@ export function curDate() {
   const mm = today.getMonth() + 1;
   let m;
   const yyyy = today.getFullYear();
-
-  if (dd < 10) {
-    d = '0' + String(dd);
-  } else {
-    d = String(dd);
-  }
-
-  if (mm < 10) {
-    m = '0' + String(mm);
-  } else {
-    m = String(mm);
-  }
-
+  d = dd < 10 ? '0' + String(dd) : String(dd);
+  m = mm < 10 ? '0' + String(mm) : String(mm);
   return `${yyyy}${m}${d}`;
+}
+
+export function curTime() {
+  const today = new Date();
+  const hh = today.getHours();
+  const mm = today.getMinutes();
+  const ss = today.getSeconds();
+  let h;
+  let m;
+  let s;
+  h = hh < 10 ? '0' + String(hh) : String(hh);
+  m = mm < 10 ? '0' + String(mm) : String(mm);
+  s = ss < 10 ? '0' + String(ss) : String(ss);
+  return `${h}${m}${s}`;
+}
+
+export function invokeSleep(func, timeInterval: Array<string>[] = [['092000', '113500'], ['125500', '150500']]) {
+  const t = curTime();
+  for (const obj of timeInterval) {
+    if (obj[0] <= t && t <= obj[1]) {
+      func();
+      break;
+    }
+  }
 }
 
 export interface CandlestickDataModel {
@@ -67,7 +80,7 @@ export class CandlestickChart {
     tooltip: {
       trigger: 'axis',
       axisPointer: {
-        type: 'cross'
+        type: 'cross',
       },
       backgroundColor: 'rgba(245, 245, 245, 0.8)',
       borderWidth: 1,
@@ -77,6 +90,9 @@ export class CandlestickChart {
         color: '#000'
       },
       extraCssText: 'width: 170px'
+    },
+    axisPointer: {
+      link: {xAxisIndex: 'all'}
     },
     xAxis: [],
     yAxis: [
@@ -122,6 +138,7 @@ export class CandlestickChart {
 
   constructor(chartID: string) {
     this.candlestickChart = echarts.init(document.getElementById(chartID) as HTMLDivElement);
+    this.candlestickChart.showLoading();
   }
 
   public setXAxis(gridIndex: number = 0,
@@ -349,6 +366,7 @@ export class CandlestickChart {
     }
 
     this.candlestickChart.setOption(this.option);
+    this.candlestickChart.hideLoading();
   }
 
   private _convertCandlestickData(data: Array<CandlestickDataModel>) {

@@ -3,6 +3,7 @@ import {DataSource} from '@angular/cdk/collections';
 import {MatPaginator, MatSort} from '@angular/material';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {Observable} from 'rxjs/Observable';
+import {Subject} from 'rxjs/Subject';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/observable/merge';
 import 'rxjs/add/observable/fromEvent';
@@ -12,7 +13,6 @@ import 'rxjs/add/operator/debounceTime';
 
 import {PositionService} from '../position.service';
 import {PositionModel} from '../position.model';
-import {Subject} from "rxjs/Subject";
 
 
 const Products = [

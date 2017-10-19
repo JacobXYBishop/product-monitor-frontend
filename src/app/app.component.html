@@ -14,7 +14,9 @@
      *ngFor="let routeLink of routeLinks; let i = index"
      [routerLink]="routeLink.link"
      [active]="activeLinkIndex === i"
-     (click)="activeLinkIndex = i">
+     (click)="activeLinkIndex = i"
+     [disabled]="routeLink.disabled"
+  >
     {{routeLink.label}}
   </a>
 </nav>

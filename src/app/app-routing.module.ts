@@ -21,8 +21,18 @@ const appRoutes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'charts',
-    redirectTo: '/charts',
+    path: 'candlestick',
+    redirectTo: '/candlestick',
+    pathMatch: 'full'
+  },
+  {
+    path: 'heatmap',
+    redirectTo: '/heatmap',
+    pathMatch: 'full'
+  },
+  {
+    path: 'treemap',
+    redirectTo: '/treemap',
     pathMatch: 'full'
   },
   {

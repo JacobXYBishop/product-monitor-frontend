@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ChartsService} from '../charts.service';
+import {CandlestickService} from '../candlestick.service';
 
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/merge';
@@ -12,10 +12,10 @@ import {CandlestickChart} from '../../utils';
 // import * as echarts from 'echarts';
 
 @Component({
-  templateUrl: './charts.component.html',
-  styleUrls: ['./charts.component.css'],
+  templateUrl: './candlestick.component.html',
+  styleUrls: ['./candlestick.component.css'],
 })
-export class ChartsComponent {
+export class CandlestickComponent {
   candlestickData;
   line1Data;
   line2Data;
@@ -25,7 +25,7 @@ export class ChartsComponent {
   point1Data;
   point2Data;
 
-  constructor(service: ChartsService) {
+  constructor(service: CandlestickService) {
 
     const complete$ = Observable.forkJoin(
       service.getData('candlestick'),

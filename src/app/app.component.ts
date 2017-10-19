@@ -22,14 +22,15 @@ export class AppComponent {
 
   constructor(private router: Router) {
     this.routeLinks = [
-      {label: 'Account', link: '/account'},
-      {label: 'Position', link: '/position'},
-      {label: 'Build', link: '/build'},
-      {label: 'Charts', link: '/charts'},
+      {label: 'Account', link: '/account', disabled: false},
+      {label: 'Position', link: '/position', disabled: false},
+      {label: 'Build', link: '/build', disabled: true},
+      {label: 'Candlestick', link: '/candlestick', disabled: true},
+      {label: 'Heatmap', link: '/heatmap', disabled: true},
+      {label: 'Treemap', link: '/treemap', disabled: true},
     ];
 
     this.activeLinkIndex = this.routeLinks
       .indexOf(this.routeLinks.find(tab => router.url.indexOf(tab.link) !== -1));
-
   }
 }

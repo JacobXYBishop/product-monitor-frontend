@@ -3,9 +3,9 @@ import {BrowserModule} from '@angular/platform-browser';
 import {HttpModule} from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import {ChartsService} from './charts.service';
-import {ChartsComponent} from './charts/charts.component';
-import {ChartsRoutingModule} from './charts-routing.module';
+import {CandlestickService} from './candlestick.service';
+import {CandlestickComponent} from './candlestick/candlestick.component';
+import {CandlestickRoutingModule} from './candlestick-routing.module';
 
 
 @NgModule({
@@ -13,14 +13,14 @@ import {ChartsRoutingModule} from './charts-routing.module';
     HttpModule,
     BrowserAnimationsModule,
     BrowserModule,
-    ChartsRoutingModule
+    CandlestickRoutingModule
   ],
   declarations: [
-    ChartsComponent
+    CandlestickComponent
   ],
   providers: [
-    ChartsService
+    CandlestickService
   ]
 })
-export class ChartsModule {
+export class CandlestickModule {
 }

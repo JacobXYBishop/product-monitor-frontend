@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 import {environment} from '../../environments/environment';
 
 @Injectable()
-export class ChartsService {
+export class CandlestickService {
 
   constructor(private http: Http) {
   }
@@ -15,7 +15,6 @@ export class ChartsService {
     const url = `${environment.jsonServerURL}/${dataName}`;
     return this.http.get(url).map(
       res => {
-        // console.log(res.json());
         return res.json();
       });
   }
