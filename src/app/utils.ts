@@ -191,7 +191,6 @@ export class CandlestickChart {
         },
       },
     );
-    console.log('candlestick option set');
   }
 
   public addLine(name: string,
@@ -219,7 +218,6 @@ export class CandlestickChart {
         }
       }
     );
-    console.log('line option set');
   }
 
   public addVolume(name: string,
@@ -234,7 +232,6 @@ export class CandlestickChart {
         data: d
       }
     );
-    console.log('volume option set');
   }
 
   public addRectangle(name: string,
@@ -265,8 +262,21 @@ export class CandlestickChart {
   }
 
   public addPoint(name: string,
-                  data: Array<PointDataModel>) {
+                  data: Array<PointDataModel>,
+                  backgroundColor: string = 'red',
+                  labelColor: string = 'white',
+                  symbol: string = 'pin',
+                  symbolSize: number = 50,
+                  symbolOffset: Array<number | string> = [0, '10%']) {
     const d = this._convertPointData(data);
+    const l = this._convertPointLabel(data);
+    let f;
+    if (d.length === 0) {
+      f = null;
+    } else {
+      f = value => l[value.dataIndex];
+    }
+
     this.option.series.push(
       {
         type: 'line',
@@ -274,13 +284,21 @@ export class CandlestickChart {
         markPoint: {
           silent: true,
           z: 90,
-          symbol: 'circle',
+          symbol: symbol,
+          symbolSize: symbolSize,
+          symbolOffset: symbolOffset,
           itemStyle: {
             normal: {
-              color: 'red',
+              color: backgroundColor,
             }
           },
-          data: d
+          data: d,
+          label: {
+            normal: {
+              color: labelColor,
+              formatter: f
+            }
+          }
         }
       }
     );
@@ -327,19 +345,14 @@ export class CandlestickChart {
 
     if (this.option.grid.length === 0) {
       this.setGrid('10%', '65%');
-      this.setGrid('75%', '15%');
+      this.setGrid('79%', '15%');
     }
 
     this.candlestickChart.setOption(this.option);
-    console.log('complete!');
-    console.log(this.option);
   }
 
   private _convertCandlestickData(data: Array<CandlestickDataModel>) {
     this.xAxis = data.map(item => item['x']);
-    if ('volume' in Object.keys(data[0])) {
-      this.volume = data.map(item => item['volume']);
-    }
     return data.map(item => [+item['open'], +item['close'], +item['low'], +item['high']]);
   }
 
@@ -357,6 +370,10 @@ export class CandlestickChart {
 
   private _convertPointData(data: Array<PointDataModel>) {
     return data.map(item => this._t([item['x'], +item['y']]));
+  }
+
+  private _convertPointLabel(data: Array<PointDataModel>) {
+    return data.map(item => item['label']);
   }
 
   private _t(item) {return {coord: item}; }

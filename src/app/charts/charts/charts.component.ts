@@ -23,6 +23,7 @@ export class ChartsComponent {
   rec1Data;
   rec2Data;
   point1Data;
+  point2Data;
 
   constructor(service: ChartsService) {
 
@@ -34,6 +35,7 @@ export class ChartsComponent {
       service.getData('rec1'),
       service.getData('rec2'),
       service.getData('point1'),
+      service.getData('point2'),
     ).map((d: any[]) => {
       this.candlestickData = d[0];
       this.line1Data = d[1];
@@ -42,6 +44,7 @@ export class ChartsComponent {
       this.rec1Data = d[4];
       this.rec2Data = d[5];
       this.point1Data = d[6];
+      this.point2Data = d[7];
     });
 
     complete$.subscribe(() => { this.createCharts(); });
@@ -60,7 +63,8 @@ export class ChartsComponent {
         chart.addLine('趋势3', this.line3Data, 'magenta'),
         chart.addRectangle('框1', this.rec1Data, 'Tomato'),
         chart.addRectangle('框2', this.rec2Data, 'Violet'),
-        chart.addPoint('点1', this.point1Data)
+        chart.addPoint('点1', this.point1Data, 'moccasin', 'black'),
+        chart.addPoint('点2', this.point2Data, 'aqua', 'black', 'arrow')
       ]
     );
 
