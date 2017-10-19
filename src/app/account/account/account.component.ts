@@ -104,10 +104,10 @@ export class AccountComponent implements OnInit {
 //   public dataChange: BehaviorSubject<AccountModel[]> = new BehaviorSubject<AccountModel[]>([]);
 //
 //   constructor(private service: AccountService) {
-//     this.service.getAccountInfo().subscribe(data => this.dataChange.next(data));
+//     this.service.getAccountInfo().subscribe(candlestickData => this.dataChange.next(candlestickData));
 //   }
 //
-//   get data(): AccountModel[] { return this.dataChange.value; }
+//   get candlestickData(): AccountModel[] { return this.dataChange.value; }
 // }
 
 
@@ -140,16 +140,16 @@ export class AccountDataSource extends DataSource<any> {
     ];
 
     return Observable.merge(...displayDataChanges).map(() => {
-      // Filter data
+      // Filter candlestickData
       this.filteredData = this.component.data.slice().filter((item: AccountModel) => {
         const searchStr = (item.product_name).toLowerCase();
         return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
       });
 
-      // Sort filtered data
+      // Sort filtered candlestickData
       const sortedData = this.sortData(this.filteredData.slice());
 
-      // Grab the page's slice of the filtered sorted data.
+      // Grab the page's slice of the filtered sorted candlestickData.
       const startIndex = this._paginator.pageIndex * this._paginator.pageSize;
       this.renderedData = sortedData.splice(startIndex, this._paginator.pageSize);
       return this.renderedData;
