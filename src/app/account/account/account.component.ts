@@ -51,7 +51,10 @@ export class AccountComponent implements OnInit {
       this.click$,
       Observable.interval(60000)
     ).map(() => {
-      invokeSleep(this.refreshAllAccounts);
+      console.log('refreshed');
+      if (invokeSleep() === true) {
+        this.refreshAllAccounts();
+      }
       return new Date();
     });
   }

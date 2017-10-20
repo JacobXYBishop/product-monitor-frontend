@@ -29,14 +29,14 @@ export function curTime() {
   return `${h}${m}${s}`;
 }
 
-export function invokeSleep(func, timeInterval: Array<string>[] = [['092000', '113500'], ['125500', '150500']]) {
+export function invokeSleep(timeInterval: Array<string>[] = [['092000', '113500'], ['125500', '150500']]) {
   const t = curTime();
   for (const obj of timeInterval) {
     if (obj[0] <= t && t <= obj[1]) {
-      func();
-      break;
+      return true;
     }
   }
+  return false;
 }
 
 export interface CandlestickDataModel {
