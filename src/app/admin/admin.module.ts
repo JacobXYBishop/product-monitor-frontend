@@ -3,16 +3,17 @@ import {NgModule} from '@angular/core';
 import {AdminComponent} from './admin/admin.component';
 import {CommonModule} from '@angular/common';
 import {AdminRoutingModule} from './admin-routing.module';
-import {BuildComponent} from '../build/build/build.component';
+
+import {MatButtonModule} from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    MatButtonModule
   ],
   declarations: [
     AdminComponent,
-    BuildComponent,
   ]
 })
 export class AdminModule {

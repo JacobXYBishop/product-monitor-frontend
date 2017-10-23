@@ -3,12 +3,10 @@
  */
 
 .title {
+  font-size: large;
   color: #3f51b5;
-  display: inline-block;
 }
 
 .clock {
-  color: #3f51b5;
-  display: inline-block;
-  padding-left: 20px;
+  font-size: x-small;
 }

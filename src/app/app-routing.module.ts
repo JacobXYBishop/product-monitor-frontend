@@ -7,11 +7,6 @@ import {AuthGuardService} from './auth-guard.service';
 
 const appRoutes: Routes = [
   {
-    path: 'admin',
-    loadChildren: 'app/admin/admin.module#AdminModule',
-    canLoad: [AuthGuardService]
-  },
-  {
     path: '',
     redirectTo: '/account',
     pathMatch: 'full'
@@ -22,9 +17,9 @@ const appRoutes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'operation',
-    redirectTo: '/operation',
-    pathMatch: 'full'
+    path: 'admin',
+    loadChildren: 'app/admin/admin.module#AdminModule',
+    canLoad: [AuthGuardService]
   },
   {
     path: 'build',

@@ -7,5 +7,5 @@ export const environment = {
   production: false,
   accountURL: 'http://192.168.51.154:5000/api/v1/account',
   positionURL: 'http://192.168.51.154:5000/api/v1/position',
-  jsonServerURL: 'http://192.168.51.210:3000'
+  jsonServerURL: 'http://localhost:3000'
 };

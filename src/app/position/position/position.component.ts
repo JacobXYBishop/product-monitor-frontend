@@ -51,7 +51,7 @@ export class PositionComponent {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild('filter') filter: ElementRef;
 
-  selectedValue;
+  selectedProduct;
   products = Products;
   position_type: string;
 

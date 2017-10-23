@@ -1,12 +1,17 @@
-<div>
-  <h1 class="title">Product Monitor</h1>
-  <p class="clock">{{clock | async | date: 'y-M-d EEEE HH:mm:ss'}}</p>
-</div>
+<mat-toolbar>
+  <div>
+    <h1 class="title">
+      Product Monitor &nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="clock">{{clock | async | date: 'y-M-d EEEE HH:mm:ss'}}</span>
+    </h1>
+  </div>
+</mat-toolbar>
+
 
 <!--&lt;!&ndash;<mat-form-field class="example-full-width">&ndash;&gt;-->
-  <!--&lt;!&ndash;<input matInput [matDatepickerFilter]="dateFilter" [matDatepicker]="picker" placeholder="Choose a date">&ndash;&gt;-->
-  <!--&lt;!&ndash;<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>&ndash;&gt;-->
-  <!--&lt;!&ndash;<mat-datepicker #picker></mat-datepicker>&ndash;&gt;-->
+<!--&lt;!&ndash;<input matInput [matDatepickerFilter]="dateFilter" [matDatepicker]="picker" placeholder="Choose a date">&ndash;&gt;-->
+<!--&lt;!&ndash;<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>&ndash;&gt;-->
+<!--&lt;!&ndash;<mat-datepicker #picker></mat-datepicker>&ndash;&gt;-->
 <!--</mat-form-field>-->
 
 <nav mat-tab-nav-bar>

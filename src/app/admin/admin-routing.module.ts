@@ -3,12 +3,10 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {AdminComponent} from './admin/admin.component';
 import {AuthGuardService} from '../auth-guard.service';
-import {BuildComponent} from '../build/build/build.component';
-
 
 const adminRoutes: Routes = [
   {
-    path: 'admin',
+    path: '',
     component: AdminComponent,
     canActivate: [AuthGuardService],
     children: [
@@ -16,7 +14,6 @@ const adminRoutes: Routes = [
         path: '',
         canActivateChild: [AuthGuardService],
         children: [
-          {path: 'build', component: BuildComponent}
         ]
       }
     ]

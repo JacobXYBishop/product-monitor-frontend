@@ -1,6 +1,6 @@
 <div>
   <mat-form-field class="product-selection">
-    <mat-select [(ngModel)]="selectedValue" placeholder="选择产品">
+    <mat-select [(ngModel)]="selectedProduct" placeholder="选择产品">
       <mat-option *ngFor="let p of products" [value]="p.product_id">
         {{p.viewValue}}
       </mat-option>
@@ -15,7 +15,7 @@
   <button
     class="submit-buttom"
     mat-raised-button color="primary"
-    (click)="click$.next(); refreshPosition(selectedValue, position_type)"
+    (click)="click$.next(); refreshPosition(selectedProduct, position_type)"
   >
     更新时间：
     <time>{{clock | async | date: 'HH:mm:ss'}}</time>

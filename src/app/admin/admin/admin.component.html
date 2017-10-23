@@ -1,1 +1,9 @@
 <h3>ADMIN</h3>
+
+<p>{{message}}</p>
+<p>
+  <button mat-raised-button color="primary" (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
+</p>
+
+
+<p *ngIf="authService.isLoggedIn">login worked!!!</p>
