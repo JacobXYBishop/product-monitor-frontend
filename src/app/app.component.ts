@@ -22,12 +22,14 @@ export class AppComponent {
 
   constructor(private router: Router) {
     this.routeLinks = [
+      {label: 'Admin', link: '/admin', disabled: false},
       {label: 'Account', link: '/account', disabled: false},
       {label: 'Position', link: '/position', disabled: false},
+      {label: 'Operation', link: '/operation', disabled: false},
       {label: 'Build', link: '/build', disabled: true},
-      {label: 'Candlestick', link: '/candlestick', disabled: true},
-      {label: 'Heatmap', link: '/heatmap', disabled: true},
-      {label: 'Treemap', link: '/treemap', disabled: true},
+      {label: 'Candlestick', link: '/candlestick', disabled: false},
+      {label: 'Heatmap', link: '/heatmap', disabled: false},
+      {label: 'Treemap', link: '/treemap', disabled: false},
     ];
 
     this.activeLinkIndex = this.routeLinks

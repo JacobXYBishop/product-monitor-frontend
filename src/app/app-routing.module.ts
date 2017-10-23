@@ -3,8 +3,14 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {SelectivePreloadingStrategy} from './selective-preloading-strategy';
+import {AuthGuardService} from './auth-guard.service';
 
 const appRoutes: Routes = [
+  {
+    path: 'admin',
+    loadChildren: 'app/admin/admin.module#AdminModule',
+    canLoad: [AuthGuardService]
+  },
   {
     path: '',
     redirectTo: '/account',
@@ -13,6 +19,11 @@ const appRoutes: Routes = [
   {
     path: 'position',
     redirectTo: '/position',
+    pathMatch: 'full'
+  },
+  {
+    path: 'operation',
+    redirectTo: '/operation',
     pathMatch: 'full'
   },
   {

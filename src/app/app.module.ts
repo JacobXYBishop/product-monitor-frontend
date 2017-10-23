@@ -15,11 +15,15 @@ import {BuildModule} from './build/build.module';
 import {CandlestickModule} from './candlestick/candlestick.module';
 
 import {AppRoutingModule} from './app-routing.module';
+import {LoginComponent} from './login/login/login.component';
+import {LoginRoutingModule} from './login/login-routing.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +38,7 @@ import {AppRoutingModule} from './app-routing.module';
     PositionModule,
     BuildModule,
     CandlestickModule,
+    LoginRoutingModule,
 
     AppRoutingModule
   ],
