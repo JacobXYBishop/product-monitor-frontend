@@ -30,6 +30,7 @@ export class AuthGuardService implements CanActivate, CanActivateChild, CanLoad 
     return this.checkLogin(url);
   }
 
+  // this is for later checking login username and password from database
   checkLogin(url: string): boolean {
     if (this.authService.isLoggedIn) {
       return true;

@@ -19,18 +19,18 @@ import {AccountModule} from './account/account.module';
 import {PositionModule} from './position/position.module';
 import {BuildModule} from './build/build.module';
 import {CandlestickModule} from './candlestick/candlestick.module';
-
-import {AppRoutingModule} from './app-routing.module';
-// import {LoginComponent} from './login/login/login.component';
+import {HeatmapModule} from './heatmap/heatmap.module';
+import {TreemapModule} from './treemap/treemap.module';
 import {LoginModule} from './login/login.module';
 import {LoginRoutingModule} from './login/login-routing.module';
+
+import {AppRoutingModule} from './app-routing.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    // LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +46,8 @@ import {LoginRoutingModule} from './login/login-routing.module';
     PositionModule,
     BuildModule,
     CandlestickModule,
+    HeatmapModule,
+    TreemapModule,
     LoginModule,
     LoginRoutingModule,
 

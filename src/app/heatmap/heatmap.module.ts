@@ -3,24 +3,23 @@ import {HttpModule} from '@angular/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import {CandlestickComponent} from './candlestick/candlestick.component';
-import {CandlestickService} from './candlestick.service';
-import {CandlestickRoutingModule} from './candlestick-routing.module';
-
+import {HeatmapComponent} from './heatmap/heatmap.component';
+import {HeatmapService} from './heatmap.service';
+import {HeatmapRoutingModule} from './heatmap-routing.module';
 
 @NgModule({
   imports: [
     HttpModule,
     BrowserModule,
     BrowserAnimationsModule,
-    CandlestickRoutingModule
+    HeatmapRoutingModule
   ],
   declarations: [
-    CandlestickComponent
+    HeatmapComponent
   ],
   providers: [
-    CandlestickService
+    HeatmapService
   ]
 })
-export class CandlestickModule {
+export class HeatmapModule {
 }

@@ -3,24 +3,23 @@ import {HttpModule} from '@angular/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import {CandlestickComponent} from './candlestick/candlestick.component';
-import {CandlestickService} from './candlestick.service';
-import {CandlestickRoutingModule} from './candlestick-routing.module';
-
+import {TreemapComponent} from './treemap/treemap.component';
+import {TreemapService} from './treemap.service';
+import {TreemapRoutingModule} from './treemap-routing.module';
 
 @NgModule({
   imports: [
     HttpModule,
     BrowserModule,
     BrowserAnimationsModule,
-    CandlestickRoutingModule
+    TreemapRoutingModule
   ],
   declarations: [
-    CandlestickComponent
+    TreemapComponent
   ],
   providers: [
-    CandlestickService
+    TreemapService
   ]
 })
-export class CandlestickModule {
+export class TreemapModule {
 }

@@ -9,8 +9,6 @@ import 'rxjs/add/observable/of';
 
 import {CandlestickChart} from '../../utils';
 
-// import * as echarts from 'echarts';
-
 @Component({
   templateUrl: './candlestick.component.html',
   styleUrls: ['./candlestick.component.css'],
@@ -47,7 +45,7 @@ export class CandlestickComponent {
       this.point2Data = d[7];
     });
 
-    complete$.subscribe(() => { this.createCharts(); });
+    complete$.subscribe(() => this.createCharts());
 
   }
 
