@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {environment} from '../../environments/environment';
 
-import {curDate} from '../utils';
+import {curDate, curTime} from '../utils';
 
 @Injectable()
 export class PositionService {
@@ -14,7 +14,8 @@ export class PositionService {
   }
 
   public getPositionInfo(product_selection: string, type_selection: string): Observable<PositionModel[]> {
-    const url = `${environment.positionURL}/${type_selection}/${product_selection}/${curDate()}`;
+    const url = `${environment.positionURL}/${type_selection}/${product_selection}?date=${curDate()}`;
+    console.log(curTime());
     return this.http.get(url).map(
       res => {
         const r = res.json();

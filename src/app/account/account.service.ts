@@ -14,7 +14,7 @@ export class AccountService {
   }
 
   public getAccountInfo(): Observable<AccountModel[]> {
-    const url = `${environment.accountURL}/${curDate()}`;
+    const url = `${environment.accountURL}?date=${curDate()}`;
     return this.http.get(url).map(
       res => {
         const r = res.json();

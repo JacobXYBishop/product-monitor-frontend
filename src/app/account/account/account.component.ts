@@ -71,7 +71,7 @@ export class AccountComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.refreshAllAccounts();
+    this.refreshAllAccounts();
   }
 
   public openSnackBar() {
