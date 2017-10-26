@@ -14,6 +14,8 @@ import {CandlestickChart} from '../../utils';
   styleUrls: ['./candlestick.component.css'],
 })
 export class CandlestickComponent {
+  graphing = true;
+
   candlestickData;
   line1Data;
   line2Data;
@@ -67,6 +69,7 @@ export class CandlestickComponent {
     );
 
     complete$.subscribe(() => chart.complete());
+    this.graphing = false;
 
   }
 }

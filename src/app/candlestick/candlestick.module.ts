@@ -7,13 +7,16 @@ import {CandlestickComponent} from './candlestick/candlestick.component';
 import {CandlestickService} from './candlestick.service';
 import {CandlestickRoutingModule} from './candlestick-routing.module';
 
+import {MatProgressSpinnerModule} from '@angular/material';
+
 
 @NgModule({
   imports: [
     HttpModule,
     BrowserModule,
     BrowserAnimationsModule,
-    CandlestickRoutingModule
+    CandlestickRoutingModule,
+    MatProgressSpinnerModule
   ],
   declarations: [
     CandlestickComponent

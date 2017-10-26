@@ -25,7 +25,7 @@ export class AppComponent {
       {label: 'Account', link: '/account', disabled: false},
       {label: 'Position', link: '/position', disabled: false},
       {label: 'Admin', link: '/admin', disabled: false},
-      {label: 'Build', link: '/build', disabled: true},
+      {label: 'Build', link: '/build', disabled: false},
       {label: 'Candlestick', link: '/candlestick', disabled: false},
       {label: 'Heatmap', link: '/heatmap', disabled: false},
       {label: 'Treemap', link: '/treemap', disabled: false},

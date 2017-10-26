@@ -8,6 +8,8 @@ import * as echarts from 'echarts';
   styleUrls: ['./heatmap.component.css']
 })
 export class HeatmapComponent {
+  graphing = true;
+
   heatmapChart;
 
   hours = ['12a', '1a', '2a', '3a', '4a', '5a', '6a',
@@ -87,6 +89,7 @@ export class HeatmapComponent {
     };
 
     this.heatmapChart.setOption(this.option);
-    this.heatmapChart.resize({height: `${document.body.clientHeight}px`});
+    this.heatmapChart.resize({height: `${document.documentElement.clientHeight - 120}px`});
+    this.graphing = false;
   }
 }

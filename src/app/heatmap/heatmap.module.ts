@@ -3,6 +3,8 @@ import {HttpModule} from '@angular/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+import {MatProgressSpinnerModule} from '@angular/material';
+
 import {HeatmapComponent} from './heatmap/heatmap.component';
 import {HeatmapService} from './heatmap.service';
 import {HeatmapRoutingModule} from './heatmap-routing.module';
@@ -12,7 +14,8 @@ import {HeatmapRoutingModule} from './heatmap-routing.module';
     HttpModule,
     BrowserModule,
     BrowserAnimationsModule,
-    HeatmapRoutingModule
+    HeatmapRoutingModule,
+    MatProgressSpinnerModule
   ],
   declarations: [
     HeatmapComponent

@@ -138,7 +138,6 @@ export class CandlestickChart {
 
   constructor(chartID: string) {
     this.candlestickChart = echarts.init(document.getElementById(chartID) as HTMLDivElement);
-    this.candlestickChart.showLoading();
   }
 
   public setXAxis(gridIndex: number = 0,
@@ -366,8 +365,7 @@ export class CandlestickChart {
     }
 
     this.candlestickChart.setOption(this.option);
-    this.candlestickChart.resize({height: `${document.body.clientHeight}px`});
-    this.candlestickChart.hideLoading();
+    this.candlestickChart.resize({height: `${document.documentElement.clientHeight - 160}px`});
   }
 
   private _convertCandlestickData(data: Array<CandlestickDataModel>) {

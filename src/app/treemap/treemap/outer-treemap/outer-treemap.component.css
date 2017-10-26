@@ -1,7 +1,6 @@
-#heatmap {
-  margin-top: 25px;
+#outer-treemap {
   width: 100%;
-  min-height: 600px;
+  min-height: 550px;
 }
 
 .spinner {

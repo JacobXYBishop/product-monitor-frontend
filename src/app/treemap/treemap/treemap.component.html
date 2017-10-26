@@ -1,1 +1,38 @@
-<div id="treemap"></div>
+<!--<div id="treemap"></div>-->
+<div class="content">
+  <button
+    *ngIf="!innerTreemapActive && !outerTreemapActive"
+    mat-raised-button
+    color="primary"
+    (click)="activateChart('outer')"
+  >
+    Outer Treemap
+  </button>
+
+  <button
+    *ngIf="!innerTreemapActive && !outerTreemapActive"
+    mat-raised-button
+    color="primary"
+    (click)="activateChart('inner')"
+  >
+    Inner Treemap
+  </button>
+
+  <button
+    *ngIf="innerTreemapActive || outerTreemapActive"
+    mat-raised-button
+    color="primary"
+    (click)="goBack()"
+  >
+    Return
+  </button>
+
+  <h1 *ngIf="!innerTreemapActive && !outerTreemapActive">
+    Select one to view!
+  </h1>
+
+</div>
+
+
+<app-outer-treemap *ngIf="outerTreemapActive"></app-outer-treemap>
+<app-inner-treemap *ngIf="innerTreemapActive"></app-inner-treemap>

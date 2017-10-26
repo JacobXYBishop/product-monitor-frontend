@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/interval';
+import 'rxjs/add/observable/timer';
 
 import * as echarts from 'echarts';
 
@@ -11,14 +12,15 @@ import * as echarts from 'echarts';
   styleUrls: ['./dynamic.component.css']
 })
 export class DynamicComponent implements OnInit {
-  dynamicChart;
+  graphing = true;
 
+  dynamicChart;
   option;
   movingStep = 11;
-
   interval$ = Observable.interval(2000);
 
   constructor() {
+    setTimeout(() => this.graphing = false, 2000);
     this.interval$.subscribe(() => {
       this.startMoving();
     });
@@ -141,7 +143,7 @@ export class DynamicComponent implements OnInit {
       ]
     };
 
-    this.dynamicChart.resize({height: `${document.body.clientHeight}px`});
+    this.dynamicChart.resize({height: `${document.documentElement.clientHeight - 160}px`});
   }
 
   startMoving() {

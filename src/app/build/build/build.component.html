@@ -1,4 +1,20 @@
-<button (click)="clickHours$.next()">Update</button>
-<button (click)="clickDate$.next()">Update</button>
+<div class="content">
+  <h1>{{clock | async | date: 'y MMMM EEEE HH:mm:ss'}}</h1>
 
-<h1>{{clock | async | date: 'y MMMM EEEE HH:mm:ss'}}</h1>
+  <button
+    mat-raised-button
+    color="primary"
+  (click)="clickHours$.next()"
+  >
+  Update Hour
+  </button>
+
+  <button
+    mat-raised-button
+    color="primary"
+  (click)="clickDate$.next()"
+  >
+  Update Day
+  </button>
+
+</div>
