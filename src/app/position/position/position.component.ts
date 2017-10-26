@@ -122,16 +122,13 @@ export class PositionDataSource extends DataSource<any> {
     ];
 
     return Observable.merge(...displayDataChanges).map(() => {
-      // Filter candlestickData
       this.filteredData = this.component.data.slice().filter((item: PositionModel) => {
         const searchStr = (item.ticker).toLowerCase();
         return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
       });
 
-      // Sort filtered candlestickData
       const sortedData = this.sortData(this.filteredData.slice());
 
-      // Grab the page's slice of the filtered sorted candlestickData.
       const startIndex = this._paginator.pageIndex * this._paginator.pageSize;
       this.renderedData = sortedData.splice(startIndex, this._paginator.pageSize);
       return this.renderedData;

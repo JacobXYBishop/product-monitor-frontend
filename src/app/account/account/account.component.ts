@@ -33,7 +33,9 @@ export class AccountComponent implements OnInit {
     'account_position_pct',
     'future_risk_pct',
     'exposure',
-    'exposure_pct'
+    'exposure_pct',
+    'trade_exposure',
+    'trade_amount'
   ];
   dataChange: BehaviorSubject<AccountModel[]> = new BehaviorSubject<AccountModel[]>([]);
   dataSource: AccountDataSource | null;
@@ -143,16 +145,13 @@ export class AccountDataSource extends DataSource<any> {
     ];
 
     return Observable.merge(...displayDataChanges).map(() => {
-      // Filter candlestickData
       this.filteredData = this.component.data.slice().filter((item: AccountModel) => {
         const searchStr = (item.product_name).toLowerCase();
         return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
       });
 
-      // Sort filtered candlestickData
       const sortedData = this.sortData(this.filteredData.slice());
 
-      // Grab the page's slice of the filtered sorted candlestickData.
       const startIndex = this._paginator.pageIndex * this._paginator.pageSize;
       this.renderedData = sortedData.splice(startIndex, this._paginator.pageSize);
       return this.renderedData;
@@ -204,9 +203,12 @@ export class AccountDataSource extends DataSource<any> {
         case 'exposure_pct':
           [propertyA, propertyB] = [a.exposure_pct, b.exposure_pct];
           break;
-        // case 'future_mv':
-        //   [propertyA, propertyB] = [a.future_mv, b.future_mv];
-        //   break;
+        case 'trade_exposure':
+          [propertyA, propertyB] = [a.trade_exposure, b.trade_exposure];
+          break;
+        case 'trade_amount':
+          [propertyA, propertyB] = [a.trade_amount, b.trade_amount];
+          break;
       }
 
       const valueA = isNaN(+propertyA) ? propertyA : +propertyA;

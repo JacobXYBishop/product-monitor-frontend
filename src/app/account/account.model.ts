@@ -10,6 +10,8 @@ export class AccountModel {
   future_risk_pct: string;
   exposure: string;
   exposure_pct: string;
+  trade_exposure: string;
+  trade_amount: string;
 
   constructor(values: Object = {}) {
     Object.assign(this, values);
