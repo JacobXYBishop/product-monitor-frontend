@@ -272,6 +272,7 @@ export class TreemapComponent {
     };
 
     this.treemapChart.setOption(this.option);
+    this.treemapChart.resize({height: `${document.body.clientHeight}px`});
 
   }
 

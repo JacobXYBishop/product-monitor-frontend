@@ -28,7 +28,7 @@ mat-cell {
 
 mat-header-cell {
   color: dimgray;
-  font-size: small;
+  font-size: smaller;
 }
 
 .search-header {

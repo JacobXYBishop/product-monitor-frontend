@@ -366,6 +366,7 @@ export class CandlestickChart {
     }
 
     this.candlestickChart.setOption(this.option);
+    this.candlestickChart.resize({height: `${document.body.clientHeight}px`});
     this.candlestickChart.hideLoading();
   }
 

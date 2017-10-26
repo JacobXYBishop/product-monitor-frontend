@@ -87,7 +87,6 @@ export class HeatmapComponent {
     };
 
     this.heatmapChart.setOption(this.option);
+    this.heatmapChart.resize({height: `${document.body.clientHeight}px`});
   }
-
-
 }
