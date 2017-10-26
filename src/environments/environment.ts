@@ -5,7 +5,7 @@
 
 export const environment = {
   production: false,
-  accountURL: 'http://192.168.51.154:5000/api/v1/account',
+  accountURL: 'http://localhost:3000/account',
   positionURL: 'http://192.168.51.154:5000/api/v1/position',
   jsonServerURL: 'http://localhost:3000'
 };

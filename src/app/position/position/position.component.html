@@ -1,4 +1,4 @@
-<div>
+<div class="manipulate-bar">
   <mat-form-field class="product-selection">
     <mat-select [(ngModel)]="selectedProduct" placeholder="选择产品">
       <mat-option *ngFor="let p of products" [value]="p.product_id">
@@ -25,7 +25,7 @@
 <div *ngIf="isDataAvailable">
   <div class="position-container mat-elevation-z8">
 
-    <div class="example-header">
+    <div class="search-header">
       <mat-input-container floatPlaceholder="never">
         <input matInput #filter placeholder="查询标的">
       </mat-input-container>

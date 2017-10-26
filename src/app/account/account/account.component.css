@@ -30,3 +30,12 @@ mat-header-cell {
   color: dimgray;
   font-size: small;
 }
+
+.search-header {
+  min-height: 64px;
+  display: flex;
+  align-items: baseline;
+  padding: 8px 24px 0;
+  font-size: 20px;
+  justify-content: space-between;
+}

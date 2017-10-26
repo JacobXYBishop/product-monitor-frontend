@@ -18,6 +18,10 @@
   margin-top: 15px;
 }
 
+.manipulate-bar {
+  margin-left: 25px;
+}
+
 mat-table {
   overflow: auto;
   max-height: 600px;
@@ -36,4 +40,13 @@ mat-cell {
 mat-header-cell {
   color: dimgray;
   font-size: medium;
+}
+
+.search-header {
+  min-height: 64px;
+  display: flex;
+  align-items: baseline;
+  padding: 8px 24px 0;
+  font-size: 20px;
+  justify-content: space-between;
 }
