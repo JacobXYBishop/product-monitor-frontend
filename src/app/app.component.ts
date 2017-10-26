@@ -29,6 +29,7 @@ export class AppComponent {
       {label: 'Candlestick', link: '/candlestick', disabled: false},
       {label: 'Heatmap', link: '/heatmap', disabled: false},
       {label: 'Treemap', link: '/treemap', disabled: false},
+      {label: 'Dynamic', link: '/dynamic', disabled: false},
     ];
 
     this.activeLinkIndex = this.routeLinks

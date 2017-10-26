@@ -42,6 +42,11 @@ const appRoutes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'dynamic',
+    redirectTo: '/dynamic',
+    pathMatch: 'full'
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   }

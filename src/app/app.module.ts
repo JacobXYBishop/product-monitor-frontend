@@ -21,6 +21,7 @@ import {BuildModule} from './build/build.module';
 import {CandlestickModule} from './candlestick/candlestick.module';
 import {HeatmapModule} from './heatmap/heatmap.module';
 import {TreemapModule} from './treemap/treemap.module';
+import {DynamicModule} from './dynamic/dynamic.module';
 import {LoginModule} from './login/login.module';
 import {LoginRoutingModule} from './login/login-routing.module';
 
@@ -48,6 +49,7 @@ import {AppRoutingModule} from './app-routing.module';
     CandlestickModule,
     HeatmapModule,
     TreemapModule,
+    DynamicModule,
     LoginModule,
     LoginRoutingModule,
 

@@ -42,7 +42,7 @@ export class TreemapComponent {
   formatUtil = new Formatter();
 
   constructor(service: TreemapService) {
-    service.getData('treemap').subscribe(
+    service.getData('treemap1').subscribe(
       (res) => {
         this.treemapData = res;
         this.createCharts();
