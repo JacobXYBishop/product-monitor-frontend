@@ -30,7 +30,6 @@ export class InnerTreemapComponent {
     for (const key of Object.keys(source)) {
       const path = basePath ? (basePath + '.' + key) : key;
       if (key.match(/^\$/)) {
-
       } else {
         target.children = target.children || [];
         const child = {name: path};
@@ -56,7 +55,8 @@ export class InnerTreemapComponent {
       title: {
         text: '配置项查询分布',
         subtext: '2016/04',
-        left: 'leafDepth'
+        // left: 'leafDepth',
+        left: 'center'
       },
       tooltip: {},
       series: [{

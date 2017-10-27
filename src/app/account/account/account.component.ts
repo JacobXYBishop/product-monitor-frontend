@@ -35,7 +35,8 @@ export class AccountComponent implements OnInit {
     'exposure',
     'exposure_pct',
     'trade_exposure',
-    'trade_amount'
+    'trade_amount',
+    'trade_exposure_pct'
   ];
   dataChange: BehaviorSubject<AccountModel[]> = new BehaviorSubject<AccountModel[]>([]);
   dataSource: AccountDataSource | null;
@@ -208,6 +209,9 @@ export class AccountDataSource extends DataSource<any> {
           break;
         case 'trade_amount':
           [propertyA, propertyB] = [a.trade_amount, b.trade_amount];
+          break;
+        case 'trade_exposure_pct':
+          [propertyA, propertyB] = [a.trade_exposure_pct, b.trade_exposure_pct];
           break;
       }
 

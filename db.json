@@ -9768,6 +9768,282 @@
         "$count": 424
       }
     },
+    "yAxis": {
+      "$count": 7594,
+      "type": {
+        "$count": 1837
+      },
+      "name": {
+        "$count": 1177
+      },
+      "nameLocation": {
+        "$count": 1212
+      },
+      "nameTextStyle": {
+        "$count": 1177,
+        "fontSize": {
+          "$count": 101
+        },
+        "fontStyle": {
+          "$count": 113
+        },
+        "fontFamily": {
+          "$count": 77
+        },
+        "color": {
+          "$count": 175
+        },
+        "fontWeight": {
+          "$count": 88
+        }
+      },
+      "inverse": {
+        "$count": 902
+      },
+      "boundaryGap": {
+        "$count": 1252
+      },
+      "min": {
+        "$count": 1075
+      },
+      "scale": {
+        "$count": 1086
+      },
+      "interval": {
+        "$count": 1149
+      },
+      "splitNumber": {
+        "$count": 1245
+      },
+      "axisLabel": {
+        "formatter": {
+          "$count": 621
+        },
+        "$count": 1439,
+        "interval": {
+          "$count": 307
+        },
+        "margin": {
+          "$count": 194
+        },
+        "inside": {
+          "$count": 183
+        },
+        "rotate": {
+          "$count": 147
+        },
+        "textStyle": {
+          "$count": 230,
+          "fontFamily": {
+            "$count": 23
+          },
+          "fontSize": {
+            "$count": 47
+          },
+          "color": {
+            "$count": 47
+          },
+          "fontStyle": {
+            "$count": 31
+          },
+          "fontWeight": {
+            "$count": 21
+          }
+        },
+        "show": {
+          "$count": 200
+        }
+      },
+      "axisTick": {
+        "show": {
+          "$count": 117
+        },
+        "$count": 940,
+        "lineStyle": {
+          "type": {
+            "$count": 16
+          },
+          "$count": 110,
+          "shadowColor": {
+            "$count": 12
+          },
+          "color": {
+            "$count": 28
+          },
+          "opacity": {
+            "$count": 13
+          },
+          "shadowBlur": {
+            "$count": 13
+          },
+          "shadowOffsetX": {
+            "$count": 9
+          },
+          "shadowOffsetY": {
+            "$count": 3
+          },
+          "width": {
+            "$count": 15
+          }
+        },
+        "length": {
+          "$count": 112
+        },
+        "inside": {
+          "$count": 85
+        },
+        "interval": {
+          "$count": 159
+        }
+      },
+      "axisLine": {
+        "$count": 1238,
+        "lineStyle": {
+          "color": {
+            "$count": 93
+          },
+          "$count": 239,
+          "width": {
+            "$count": 63
+          },
+          "type": {
+            "$count": 61
+          },
+          "shadowBlur": {
+            "$count": 40
+          },
+          "opacity": {
+            "$count": 45
+          },
+          "shadowColor": {
+            "$count": 36
+          },
+          "shadowOffsetX": {
+            "$count": 28
+          },
+          "shadowOffsetY": {
+            "$count": 26
+          }
+        },
+        "onZero": {
+          "$count": 214
+        },
+        "show": {
+          "$count": 208
+        }
+      },
+      "gridIndex": {
+        "$count": 1412
+      },
+      "position": {
+        "$count": 1522
+      },
+      "nameGap": {
+        "$count": 1094
+      },
+      "splitLine": {
+        "$count": 830,
+        "lineStyle": {
+          "shadowBlur": {
+            "$count": 17
+          },
+          "shadowColor": {
+            "$count": 11
+          },
+          "shadowOffsetX": {
+            "$count": 11
+          },
+          "opacity": {
+            "$count": 22
+          },
+          "type": {
+            "$count": 51
+          },
+          "$count": 136,
+          "shadowOffsetY": {
+            "$count": 9
+          },
+          "color": {
+            "$count": 62
+          },
+          "width": {
+            "$count": 35
+          }
+        },
+        "interval": {
+          "$count": 122
+        },
+        "show": {
+          "$count": 97
+        }
+      },
+      "splitArea": {
+        "$count": 607,
+        "interval": {
+          "$count": 77
+        },
+        "show": {
+          "$count": 51
+        },
+        "areaStyle": {
+          "$count": 87,
+          "color": {
+            "$count": 58
+          },
+          "opacity": {
+            "$count": 13
+          },
+          "shadowOffsetY": {
+            "$count": 10
+          },
+          "shadowOffsetX": {
+            "$count": 9
+          },
+          "shadowColor": {
+            "$count": 7
+          },
+          "shadowBlur": {
+            "$count": 13
+          }
+        }
+      },
+      "data": {
+        "$count": 972,
+        "textStyle": {
+          "color": {
+            "$count": 91
+          },
+          "align": {
+            "$count": 66
+          },
+          "$count": 250,
+          "baseline": {
+            "$count": 81
+          },
+          "fontWeight": {
+            "$count": 25
+          },
+          "fontStyle": {
+            "$count": 31
+          },
+          "fontFamily": {
+            "$count": 25
+          },
+          "fontSize": {
+            "$count": 40
+          }
+        },
+        "value": {
+          "$count": 471
+        }
+      },
+      "max": {
+        "$count": 840
+      },
+      "silent": {
+        "$count": 284
+      }
+    },
     "series": {
       "bar": {
         "$count": 3662,
@@ -18652,282 +18928,6 @@
       },
       "color": {
         "$count": 323
-      }
-    },
-    "yAxis": {
-      "$count": 7594,
-      "type": {
-        "$count": 1837
-      },
-      "name": {
-        "$count": 1177
-      },
-      "nameLocation": {
-        "$count": 1212
-      },
-      "nameTextStyle": {
-        "$count": 1177,
-        "fontSize": {
-          "$count": 101
-        },
-        "fontStyle": {
-          "$count": 113
-        },
-        "fontFamily": {
-          "$count": 77
-        },
-        "color": {
-          "$count": 175
-        },
-        "fontWeight": {
-          "$count": 88
-        }
-      },
-      "inverse": {
-        "$count": 902
-      },
-      "boundaryGap": {
-        "$count": 1252
-      },
-      "min": {
-        "$count": 1075
-      },
-      "scale": {
-        "$count": 1086
-      },
-      "interval": {
-        "$count": 1149
-      },
-      "splitNumber": {
-        "$count": 1245
-      },
-      "axisLabel": {
-        "formatter": {
-          "$count": 621
-        },
-        "$count": 1439,
-        "interval": {
-          "$count": 307
-        },
-        "margin": {
-          "$count": 194
-        },
-        "inside": {
-          "$count": 183
-        },
-        "rotate": {
-          "$count": 147
-        },
-        "textStyle": {
-          "$count": 230,
-          "fontFamily": {
-            "$count": 23
-          },
-          "fontSize": {
-            "$count": 47
-          },
-          "color": {
-            "$count": 47
-          },
-          "fontStyle": {
-            "$count": 31
-          },
-          "fontWeight": {
-            "$count": 21
-          }
-        },
-        "show": {
-          "$count": 200
-        }
-      },
-      "axisTick": {
-        "show": {
-          "$count": 117
-        },
-        "$count": 940,
-        "lineStyle": {
-          "type": {
-            "$count": 16
-          },
-          "$count": 110,
-          "shadowColor": {
-            "$count": 12
-          },
-          "color": {
-            "$count": 28
-          },
-          "opacity": {
-            "$count": 13
-          },
-          "shadowBlur": {
-            "$count": 13
-          },
-          "shadowOffsetX": {
-            "$count": 9
-          },
-          "shadowOffsetY": {
-            "$count": 3
-          },
-          "width": {
-            "$count": 15
-          }
-        },
-        "length": {
-          "$count": 112
-        },
-        "inside": {
-          "$count": 85
-        },
-        "interval": {
-          "$count": 159
-        }
-      },
-      "axisLine": {
-        "$count": 1238,
-        "lineStyle": {
-          "color": {
-            "$count": 93
-          },
-          "$count": 239,
-          "width": {
-            "$count": 63
-          },
-          "type": {
-            "$count": 61
-          },
-          "shadowBlur": {
-            "$count": 40
-          },
-          "opacity": {
-            "$count": 45
-          },
-          "shadowColor": {
-            "$count": 36
-          },
-          "shadowOffsetX": {
-            "$count": 28
-          },
-          "shadowOffsetY": {
-            "$count": 26
-          }
-        },
-        "onZero": {
-          "$count": 214
-        },
-        "show": {
-          "$count": 208
-        }
-      },
-      "gridIndex": {
-        "$count": 1412
-      },
-      "position": {
-        "$count": 1522
-      },
-      "nameGap": {
-        "$count": 1094
-      },
-      "splitLine": {
-        "$count": 830,
-        "lineStyle": {
-          "shadowBlur": {
-            "$count": 17
-          },
-          "shadowColor": {
-            "$count": 11
-          },
-          "shadowOffsetX": {
-            "$count": 11
-          },
-          "opacity": {
-            "$count": 22
-          },
-          "type": {
-            "$count": 51
-          },
-          "$count": 136,
-          "shadowOffsetY": {
-            "$count": 9
-          },
-          "color": {
-            "$count": 62
-          },
-          "width": {
-            "$count": 35
-          }
-        },
-        "interval": {
-          "$count": 122
-        },
-        "show": {
-          "$count": 97
-        }
-      },
-      "splitArea": {
-        "$count": 607,
-        "interval": {
-          "$count": 77
-        },
-        "show": {
-          "$count": 51
-        },
-        "areaStyle": {
-          "$count": 87,
-          "color": {
-            "$count": 58
-          },
-          "opacity": {
-            "$count": 13
-          },
-          "shadowOffsetY": {
-            "$count": 10
-          },
-          "shadowOffsetX": {
-            "$count": 9
-          },
-          "shadowColor": {
-            "$count": 7
-          },
-          "shadowBlur": {
-            "$count": 13
-          }
-        }
-      },
-      "data": {
-        "$count": 972,
-        "textStyle": {
-          "color": {
-            "$count": 91
-          },
-          "align": {
-            "$count": 66
-          },
-          "$count": 250,
-          "baseline": {
-            "$count": 81
-          },
-          "fontWeight": {
-            "$count": 25
-          },
-          "fontStyle": {
-            "$count": 31
-          },
-          "fontFamily": {
-            "$count": 25
-          },
-          "fontSize": {
-            "$count": 40
-          }
-        },
-        "value": {
-          "$count": 471
-        }
-      },
-      "max": {
-        "$count": 840
-      },
-      "silent": {
-        "$count": 284
       }
     },
     "timeline": {

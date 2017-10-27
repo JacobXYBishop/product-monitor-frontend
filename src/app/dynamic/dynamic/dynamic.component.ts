@@ -16,7 +16,7 @@ export class DynamicComponent implements OnInit {
 
   dynamicChart;
   option;
-  movingStep = 11;
+  movingStep = 30;
   interval$ = Observable.interval(2000);
 
   constructor() {
@@ -71,7 +71,7 @@ export class DynamicComponent implements OnInit {
           data: (() => {
             let now = new Date();
             const res = [];
-            let len = 10;
+            let len = 30;
             while (len--) {
               res.unshift(now.toLocaleTimeString().replace(/^\D*/, ''));
               now = new Date(Number(now) - 2000);
@@ -84,7 +84,7 @@ export class DynamicComponent implements OnInit {
           boundaryGap: true,
           data: (function () {
             const res = [];
-            let len = 10;
+            let len = 30;
             while (len--) {
               res.push(len + 1);
             }
@@ -118,7 +118,7 @@ export class DynamicComponent implements OnInit {
           yAxisIndex: 1,
           data: (function () {
             const res = [];
-            let len = 10;
+            let len = 30;
             while (len--) {
               res.push(Math.round(Math.random() * 1000));
             }
@@ -131,7 +131,7 @@ export class DynamicComponent implements OnInit {
           data: (function () {
             const res = [];
             let len = 0;
-            while (len < 10) {
+            while (len < 30) {
               res.push(
                 +(Math.random() * 10 + 5).toFixed(1)
               );
