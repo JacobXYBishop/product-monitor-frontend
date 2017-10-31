@@ -3,23 +3,21 @@
  */
 import * as echarts from 'echarts';
 
-export function curDate() {
-  const today = new Date();
-  const dd = today.getDate();
+export function dateFormatter(date: Date): string {
+  const dd = date.getDate();
   let d;
-  const mm = today.getMonth() + 1;
+  const mm = date.getMonth() + 1;
   let m;
-  const yyyy = today.getFullYear();
+  const yyyy = date.getFullYear();
   d = dd < 10 ? '0' + String(dd) : String(dd);
   m = mm < 10 ? '0' + String(mm) : String(mm);
   return `${yyyy}${m}${d}`;
 }
 
-export function curTime() {
-  const today = new Date();
-  const hh = today.getHours();
-  const mm = today.getMinutes();
-  const ss = today.getSeconds();
+export function timeFormatter(date: Date): string {
+  const hh = date.getHours();
+  const mm = date.getMinutes();
+  const ss = date.getSeconds();
   let h;
   let m;
   let s;
@@ -27,6 +25,22 @@ export function curTime() {
   m = mm < 10 ? '0' + String(mm) : String(mm);
   s = ss < 10 ? '0' + String(ss) : String(ss);
   return `${h}${m}${s}`;
+}
+
+export function curDate() {
+  const today = new Date();
+  return dateFormatter(today);
+}
+
+export function curTime() {
+  const today = new Date();
+  return timeFormatter(today);
+}
+
+export function dateFilter(d: Date): boolean {
+  const day = d.getDay();
+  // Prevent Saturday and Sunday from being selected.
+  return day !== 0 && day !== 6;
 }
 
 export function invokeSleep(timeInterval: Array<string>[] = [['092000', '113500'], ['125500', '150500']]) {
@@ -38,6 +52,82 @@ export function invokeSleep(timeInterval: Array<string>[] = [['092000', '113500'
   }
   return false;
 }
+
+export const arr = {
+  max: array => {
+    return Math.max.apply(null, array);
+  },
+  min: array => {
+    return Math.min.apply(null, array);
+  },
+  range: array => {
+    return arr.max(array) - arr.min(array);
+  },
+  midrange: array => {
+    return arr.range(array) / 2;
+  },
+  sum: array => {
+    let num = 0;
+    for (let i = 0, l = array.length; i < l; i++) {
+      num += array[i];
+    }
+    return num;
+  },
+  mean: array => {
+    return arr.sum(array) / array.length;
+  },
+  median: array => {
+    array.sort((a, b) => {
+      return a - b;
+    });
+    const mid = array.length / 2;
+    return mid % 1 ? array[mid - 0.5] : (array[mid - 1] + array[mid]) / 2;
+  },
+  modes: array => {
+    if (!array.length) {
+      return [];
+    }
+    const modeMap = {};
+    let maxCount = 0, modes = [];
+    array.forEach(val => {
+      if (!modeMap[val]) {
+        modeMap[val] = 1;
+      } else {
+        modeMap[val]++;
+      }
+      if (modeMap[val] > maxCount) {
+        modes = [val];
+        maxCount = modeMap[val];
+      } else if (modeMap[val] === maxCount) {
+        modes.push(val);
+        maxCount = modeMap[val];
+      }
+    });
+    return modes;
+  },
+  variance: array => {
+    const mean = arr.mean(array);
+    return arr.mean(array.map(num => {
+      return Math.pow(num - mean, 2);
+    }));
+  },
+  standardDeviation: array => {
+    return Math.sqrt(arr.variance(array));
+  },
+  meanAbsoluteDeviation: array => {
+    const mean = arr.mean(array);
+    return arr.mean(array.map(num => {
+      return Math.abs(num - mean);
+    }));
+  },
+  zScores: array => {
+    const mean = arr.mean(array);
+    const standardDeviation = arr.standardDeviation(array);
+    return array.map(num => {
+      return (num - mean) / standardDeviation;
+    });
+  }
+};
 
 export interface CandlestickDataModel {
   open: number;

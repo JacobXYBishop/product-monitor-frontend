@@ -6,8 +6,12 @@
   display: inline-block;
 }
 
-.submit-buttom {
+.submit-button {
   display: inline-block;
+}
+
+.mat-select {
+  height: 22px;
 }
 
 .position-container {

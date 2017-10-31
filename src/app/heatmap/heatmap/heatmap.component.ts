@@ -12,12 +12,23 @@ export class HeatmapComponent {
 
   heatmapChart;
 
-  hours = ['12a', '1a', '2a', '3a', '4a', '5a', '6a',
-    '7a', '8a', '9a', '10a', '11a',
-    '12p', '1p', '2p', '3p', '4p', '5p',
-    '6p', '7p', '8p', '9p', '10p', '11p'];
-  days = ['Saturday', 'Friday', 'Thursday',
-    'Wednesday', 'Tuesday', 'Monday', 'Sunday'];
+  date = [
+    '2017/09/19', '2017/09/20', '2017/09/21', '2017/09/22', '2017/09/25', '2017/09/26',
+    '2017/09/27', '2017/09/28', '2017/09/29', '2017/10/09', '2017/10/10', '2017/10/11',
+    '2017/10/12', '2017/10/13', '2017/10/16', '2017/10/17', '2017/10/18', '2017/10/19',
+    '2017/10/20', '2017/10/23', '2017/10/24', '2017/10/25', '2017/10/26', '2017/10/27'
+  ];
+  product_name = [
+    '慧睿1号',
+    '慧睿2号',
+    '梧桐',
+    '华山',
+    '慧睿',
+    '泰山',
+    '合伙',
+    '博古通今',
+    '汇富'
+  ];
 
   option;
   heatmapData;
@@ -45,19 +56,20 @@ export class HeatmapComponent {
       },
       animation: false,
       grid: {
-        height: '50%',
+        top: 30,
+        height: '70%',
         y: '10%'
       },
       xAxis: {
         type: 'category',
-        data: this.hours,
+        data: this.date,
         splitArea: {
           show: true
         }
       },
       yAxis: {
         type: 'category',
-        data: this.days,
+        data: this.product_name.reverse(),
         splitArea: {
           show: true
         }
@@ -65,13 +77,17 @@ export class HeatmapComponent {
       visualMap: {
         min: 0,
         max: 10,
+        itemHeight: 700,
         calculable: true,
         orient: 'horizontal',
         left: 'center',
-        bottom: '15%'
+        bottom: '10%',
+        inRange: {
+          color: ['#2ebabd', '#4e9da9', '#be3964', '#ee0e47']
+        },
       },
       series: [{
-        name: 'Punch Card',
+        name: '产品收益情况',
         type: 'heatmap',
         data: this.heatmapData,
         label: {

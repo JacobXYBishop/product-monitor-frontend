@@ -25,6 +25,7 @@ const Products = [
   {product_id: 'yflp1', viewValue: '合伙'},
   {product_id: 'bgtj', viewValue: '搏股通金'},
   {product_id: 'hfyf', viewValue: '汇富'},
+  {product_id: 'lhyx', viewValue: '量化优选'},
 ];
 
 @Component({

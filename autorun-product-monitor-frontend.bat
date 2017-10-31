@@ -1,0 +1,1 @@
+ng serve --host 192.168.51.154 --prod

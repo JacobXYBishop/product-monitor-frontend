@@ -17,6 +17,11 @@ const appRoutes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'summary',
+    redirectTo: '/summary',
+    pathMatch: 'full'
+  },
+  {
     path: 'admin',
     loadChildren: 'app/admin/admin.module#AdminModule',
     canLoad: [AuthGuardService]

@@ -14,16 +14,11 @@ export class AppComponent {
   activeLinkIndex = 0;
   clock = Observable.interval(1000).map(() => new Date());
 
-  // dateFilter = (d: Date): boolean => {
-  //   const day = d.getDay();
-  //   // Prevent Saturday and Sunday from being selected.
-  //   return day !== 0 && day !== 6;
-  // }
-
   constructor(private router: Router) {
     this.routeLinks = [
       {label: 'Account', link: '/account', disabled: false},
       {label: 'Position', link: '/position', disabled: false},
+      {label: 'Summary', link: '/summary', disabled: false},
       {label: 'Admin', link: '/admin', disabled: false},
       {label: 'Build', link: '/build', disabled: false},
       {label: 'Candlestick', link: '/candlestick', disabled: false},

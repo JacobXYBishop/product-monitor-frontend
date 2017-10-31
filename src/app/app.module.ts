@@ -17,6 +17,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
 import {AccountModule} from './account/account.module';
 import {PositionModule} from './position/position.module';
+import {SummaryModule} from './summary/summary.module';
 import {BuildModule} from './build/build.module';
 import {CandlestickModule} from './candlestick/candlestick.module';
 import {HeatmapModule} from './heatmap/heatmap.module';
@@ -45,6 +46,7 @@ import {AppRoutingModule} from './app-routing.module';
 
     AccountModule,
     PositionModule,
+    SummaryModule,
     BuildModule,
     CandlestickModule,
     HeatmapModule,
