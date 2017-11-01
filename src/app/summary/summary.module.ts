@@ -12,12 +12,12 @@ import {FormsModule} from '@angular/forms';
 import {
   MatButtonModule,
   MatDatepickerModule,
-  MatGridListModule,
   MatInputModule,
   MatListModule,
   MatProgressSpinnerModule,
   MatSelectModule
 } from '@angular/material';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 @NgModule({
@@ -35,7 +35,7 @@ import {
     MatSelectModule,
     MatProgressSpinnerModule,
     MatListModule,
-    MatGridListModule,
+    FlexLayoutModule
   ],
   declarations: [
     SummaryComponent

@@ -15,6 +15,11 @@
   right: 0;
 }
 
+#toolbar {
+  margin-top: 5px;
+  margin-left: 25px;
+}
+
 #summary {
   margin-top: 15px;
   width: 100%;

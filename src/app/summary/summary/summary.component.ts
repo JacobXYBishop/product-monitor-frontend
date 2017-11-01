@@ -109,7 +109,7 @@ export class SummaryComponent implements OnInit {
     };
 
     this.chart.setOption(this.option);
-    this.chart.resize({height: `${document.documentElement.clientHeight - 120}px`});
+    this.chart.resize({height: `${document.documentElement.clientHeight - 240}px`});
     this.graphing = false;
   }
 

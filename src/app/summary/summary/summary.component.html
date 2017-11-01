@@ -1,65 +1,74 @@
-<mat-form-field>
-  <input
-    matInput
-    [matDatepickerFilter]="myFilter"
-    [matDatepicker]="picker1"
-    placeholder="起始日期"
-    [(ngModel)]="startDate"
-    ngDefaultControl
-  >
-  <mat-datepicker-toggle
-    matSuffix
-    [for]="picker1"
-  >
-  </mat-datepicker-toggle>
-  <mat-datepicker
-    #picker1
-  >
-  </mat-datepicker>
-</mat-form-field>
+<div id="toolbar">
+  <mat-form-field>
+    <input
+      matInput
+      [matDatepickerFilter]="myFilter"
+      [matDatepicker]="picker1"
+      placeholder="起始日期"
+      [(ngModel)]="startDate"
+      ngDefaultControl
+    >
+    <mat-datepicker-toggle
+      matSuffix
+      [for]="picker1"
+    >
+    </mat-datepicker-toggle>
+    <mat-datepicker
+      #picker1
+    >
+    </mat-datepicker>
+  </mat-form-field>
 
-<mat-form-field>
-  <input
-    matInput
-    [matDatepickerFilter]="myFilter"
-    [matDatepicker]="picker2"
-    placeholder="结束日期"
-    [(ngModel)]="endDate"
-    ngDefaultControl
-  >
-  <mat-datepicker-toggle
-    matSuffix
-    [for]="picker2"
-  >
-  </mat-datepicker-toggle>
-  <mat-datepicker
-    #picker2
-  >
-  </mat-datepicker>
-</mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      [matDatepickerFilter]="myFilter"
+      [matDatepicker]="picker2"
+      placeholder="结束日期"
+      [(ngModel)]="endDate"
+      ngDefaultControl
+    >
+    <mat-datepicker-toggle
+      matSuffix
+      [for]="picker2"
+    >
+    </mat-datepicker-toggle>
+    <mat-datepicker
+      #picker2
+    >
+    </mat-datepicker>
+  </mat-form-field>
 
-<mat-form-field>
-  <mat-select [(ngModel)]="selectedProduct" placeholder="选择产品">
-    <mat-option *ngFor="let p of products" [value]="p.product_id">
-      {{p.viewValue}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
+  <mat-form-field>
+    <mat-select [(ngModel)]="selectedProduct" placeholder="选择产品">
+      <mat-option *ngFor="let p of products" [value]="p.product_id">
+        {{p.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-<button
-  class="submit-button"
-  mat-raised-button color="primary"
-  (click)="submit()"
->
-  提交
-</button>
+  <button
+    class="submit-button"
+    mat-raised-button color="primary"
+    (click)="submit()"
+  >
+    提交
+  </button>
+</div>
 
 <mat-spinner class="spinner" *ngIf="graphing"></mat-spinner>
-<mat-grid-list cols="5" rowHeight="1000px">
-  <mat-grid-tile [colspan]="4">
+
+<div
+  fxLayout
+  fxLayout.xs="column"
+  fxLayoutAlign="cuenter"
+  fxLayoutGap="10px"
+  fxLayoutGap.xs="0"
+>
+  <div fxFlex="80%">
     <div id="summary"></div>
-  </mat-grid-tile>
-  <mat-grid-tile [colspan]="1">
+  </div>
+  <div fxFlex="20%">
     <mat-list *ngIf="calculated">
       <mat-list-item>净值增长率：{{productInfo.netValueIncreasingRatio}}</mat-list-item>
       <mat-list-item>净值波动率：{{productInfo.netValueVolatilityRatio}}</mat-list-item>
@@ -70,5 +79,5 @@
       <mat-list-item>最大回撤：{{productInfo.maxDrawdown}}</mat-list-item>
       <mat-list-item>下半标准差：{{productInfo.underHalfSTD}}</mat-list-item>
     </mat-list>
-  </mat-grid-tile>
-</mat-grid-list>
+  </div>
+</div>
